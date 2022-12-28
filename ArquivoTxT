@@ -1,1 +1,24 @@
+--Não Edite Por favor
+--no edit please
 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "POR FAVOR NÃO EDITE NADA";
+    Text = "PLEASE DO NOT EDIT ANYTHING";
+    Duration = 7.25;
+})
+wait(7)
+
+ 
+   game.StarterGui:SetCore("SendNotification", {
+	Title = "NÃO SEJA INCOMPETENTE";
+	Text = "DON'T BE INCOMPETENT";
+        Duration = 7.25;
+ 
+})
+wait(7)
+
+    game.StarterGui:SetCore("SendNotification", {
+	Title = "By Liver zMods";
+	Text = "created by Brasileiro!";
+  Icon = "rbxthumb://type=Asset&id=11935866652&w=150&h=150"});
+        Duration = 30;
