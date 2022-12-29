@@ -1,2 +1,2 @@
--- x-Rawnder Hub
+-- x Rawnder Hub
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/xRawder.'))().
