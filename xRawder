@@ -1,6 +1,5 @@
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/ArquivoTxT'))()
-})
-wait(17)
+wait(14)
 
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
