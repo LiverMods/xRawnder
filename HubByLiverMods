@@ -30,7 +30,7 @@ end)
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)  
-  PlayerSection:NewButton("Auto Respawn", "Renaça no mesmo lugar após a morte", function()
+  PlayerSection:NewButton("Voltar para o Respawn", "melhor que reset", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
@@ -113,18 +113,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103
 end)
 TelSection:NewButton("Nexus 2", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100, 2388)
-end)     
-      local Toast = Window:NewTab("TIME")
-    local ToastSection = Toast:NewSection("Somente Prison life")
-  ToastSection:NewButton("Inmate", "Se torne bandido", function()
-workspace.Remote.TeamEvent:FireServer("Bright orange")
-end)
-  ToastSection:NewButton("Guard", "Se torne Polícial", function()
-workspace.Remote.TeamEvent:FireServer("Bright orange")
-end)
-  ToastSection:NewButton("Neutro", "Se torne neutro", function()
-workspace.Remote.TeamEvent:FireServer("Bright orange")
-end)
+end)          
            local Pri = Window:NewTab("Prison Life Hubs")
                  local PriSection = Pri:NewSection("HUB")
           PriSection:NewButton("Prevail", "Gui Op", function()
