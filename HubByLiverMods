@@ -29,7 +29,12 @@ end)
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
-    end)    
+    end)  
+  PlayerSection:NewButton("Auto Respawn", "Renaça no mesmo lugar após a morte", function()
+local A_1 = "\66\114\111\121\111\117\98\97\100\100"
+local Event = game:GetService("Workspace").Remote.loadchar
+Event:InvokeServer(A_1)
+end)
     PlayerSection:NewButton("ESP PLAYERS", "Veja pessoas atraves das paredes, não podera ser desativado!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source-Chasms-Script/main/script.lua'))()
     end)
@@ -60,8 +65,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
 					module["AutoFire"] = true
 				end
 			end)  
-    local Other = Window:NewTab("Other")
-    local OtherSection = Other:NewSection("Other")
+    local Other = Window:NewTab("Outros")
+    local OtherSection = Other:NewSection("Outros")
     OtherSection:NewButton("F3X", "e último", function()
         loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
     end)
@@ -109,6 +114,17 @@ end)
 TelSection:NewButton("Nexus 2", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100, 2388)
 end)     
+      local Toast = Window:NewTab("TIME")
+    local ToastSection = Toast:NewSection("Somente Prison life")
+  ToastSection:NewButton("Inmate", "Se torne bandido", function()
+workspace.Remote.TeamEvent:FireServer("Bright orange")
+end)
+  ToastSection:NewButton("Guard", "Se torne Polícial", function()
+workspace.Remote.TeamEvent:FireServer("Bright orange")
+end)
+  ToastSection:NewButton("Neutro", "Se torne neutro", function()
+workspace.Remote.TeamEvent:FireServer("Bright orange")
+end)
            local Pri = Window:NewTab("Prison Life Hubs")
                  local PriSection = Pri:NewSection("HUB")
           PriSection:NewButton("Prevail", "Gui Op", function()
