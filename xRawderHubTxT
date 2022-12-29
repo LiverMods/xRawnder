@@ -1,6 +1,3 @@
---Não Edite Por favor
---no edit please
-
 game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADING";
 	Text = "...";
