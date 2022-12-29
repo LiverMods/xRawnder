@@ -2,11 +2,14 @@ game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADING";
 	Text = "...";
         Duration = 5.5;
+})
 wait(6)
+
 game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADED";
 	Text = "SUCCESS";
         Duration = 4.47;
+})
 wait(5)
 
 
@@ -22,7 +25,7 @@ wait(7)
 	Title = "NÃO SEJA INCOMPETENTE";
 	Text = "DON'T BE INCOMPETENT";
         Duration = 7.25;
- 
+})
 wait(7)
 
     game.StarterGui:SetCore("SendNotification", {
