@@ -1,6 +1,3 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/ArquivoTxT'))()
-wait(14)
-
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local label = Instance.new("TextLabel")
@@ -38,5 +35,7 @@ Hitbox.Text = "EXECUTE"
 Hitbox.TextColor3 = Color3.fromRGB(255, 255, 0)
 Hitbox.TextSize = 18.000
 Hitbox.MouseButton1Down:connect(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/ArquivoTxT'))()
+wait(10)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/HubByLiverMods'))()
 end)
