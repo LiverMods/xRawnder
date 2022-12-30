@@ -203,7 +203,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
 
-local Pri = Window:NewTab("Hub")
+local Send = Window:NewTab("Hub")
                  local SendSection = Send:NewSection("HUB")
           SendSection:NewButton("Press L to close", Enum.KeyCode.L, function()
     Library:ToggleUI()
