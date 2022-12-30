@@ -19,7 +19,7 @@ TextButton.Text = "Abrir"
 TextButton.TextColor3 = Color3.fromRGB(0, 255, 255)
 TextButton.TextSize = 35.000
 TextButton.MouseButton1Down:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true, "L" ,false ,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, "F6" ,false ,game)
 end)
 
 P = game:GetService("Players").LocalPlayer
@@ -47,7 +47,7 @@ TextButton.Text = "ABRIR"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 30.000
 TextButton.MouseButton1Down:Connect(function()
-	game:GetService("VirtualInputManager"):SendKeyEvent(true, "L" ,false ,game)
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, "F6" ,false ,game)
 end)
 end)
 
@@ -197,8 +197,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
 
-                 local PriSection = Pri:NewSection("HUB")
-          PriSection:NewButton("Press L to close", Enum.KeyCode.L, function()
+                 PriSection:NewKeybind("Press F6 to close", "Press F6 to close", Enum.KeyCode.F6, function()
     Library:ToggleUI()
 end)
 
