@@ -196,22 +196,28 @@ end)
 PriSection:NewKeybind("Press F6 to close", "Press F6 to close", Enum.KeyCode.F6, function()
     Library:ToggleUI()
 end)
-local Upd = Window:NewTab("Updates")
-    local UpdSection = Upd:NewSection("🇧🇷PORTUGUÊS🇵🇹")
-UpdSection:UpdateSection("1-Adicionado 'Fly Gui' Na Área 'Outros' ")
+local Update = Window:NewTab("Updates")
+local UpdateSection = Update:NewSection("🇧🇷PORTUGUÊS🇵🇹")
+UpdateSection:NewLabel("1-Adicionado 'Fly Gui' Na Área 'Outros'")
 end)
-UpdSection:UpdateSection("2-Adicionado 'HitBox Ball V2' Na Área 'HitBox' ")
+
+UpdateSection:NewLabel("2-Adicionado 'HitBox Ball V2' Na Área 'HitBox' ")
 end)
-local UpdSection = Upd:NewSection("🇺🇲ENGLISH🇬🇧")
-UpdSection:UpdateSection("1-Added 'Fly Gui' In the 'Others' Area ")
+
+local UpdateSection = Update:NewSection("🇺🇲ENGLISH🇬🇧")
+UpdateSection:NewLabel("1-Added 'Fly Gui' In the 'Others' Area")
 end)
-UpdSection:UpdateSection("2-Added 'HitBox Ball V2' in 'HitBox' area' ")
+
+UpdateSection:NewLabel("2-Added 'HitBox Ball V2' in 'HitBox' area' ")
 end)
-local UpdSection = Upd:NewSection("🇲🇽SPANISH🇪🇸")
-UpdSection:UpdateSection("1-Se agregó 'Fly Gui' en el área 'Otros' ")
+
+local UpdateSection = Update:NewSection("🇲🇽SPANISH🇪🇸")
+UpdateSection:NewLabel("1-Se agregó 'Fly Gui' en el área 'Otros'")
 end)
-UpdSection:UpdateSection("2-Se agregó 'HitBox Ball V2' en el área 'HitBox' ")
+
+UpdateSection:NewLabel("2-Se agregó 'HitBox Ball V2' en el área 'HitBox'")
 end)
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
 --please do not edit
