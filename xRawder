@@ -27,7 +27,7 @@ label.TextWrapped = true
  
 Button.Name = "Button"
 Button.Name = main
-Hitbox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Button.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 Button.Name = UDim2.new(0.114285722, 0, 0.372448981, 0)
 Button.Name = UDim2.new(0, 80, 0, 30)
 Button.Name = Enum.Font.SourceSans
