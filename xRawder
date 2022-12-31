@@ -26,14 +26,23 @@ label.TextSize = 5.000
 label.TextWrapped = true
  
 Button.Name = "Button"
-Button.Name = main
+Button.Parent = main
 Button.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-Button.Name = UDim2.new(0.114285722, 0, 0.372448981, 0)
-Button.Name = UDim2.new(0, 80, 0, 30)
-Button.Name = Enum.Font.SourceSans
-Button.Name = "EXECUTE"
-Button.Name = Color3.fromRGB(255, 255, 0)
-Button.Name = 17.675
+Button.Position = UDim2.new(0.114285722, 0, 0.372448981, 0)
+Button.Size = UDim2.new(0, 80, 0, 30)
+Button.Font = Enum.Font.SourceSans
+Button.Text = "EXECUTE"
+Button.TextColor3 = Color3.fromRGB(255, 255, 0)
+Button.TextSize = 17.675
 Button.MouseButton1Down:connect(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/HubByLiverMods'))()
 end)
+
+Hitbox. = main
+Hitbox.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Hitbox. = UDim2.new(0.114285722, 0, 0.372448981, 0)
+Hitbox. = UDim2.new(0, 90, 0, 40)
+Hitbox. = Enum.Font.SourceSans
+Hitbox. = "Hitbox"
+Hitbox. = Color3.fromRGB(0, 0, 0)
+Hitbox. = 40.000
