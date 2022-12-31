@@ -42,9 +42,7 @@ TextButton.MouseButton1Down:Connect(function()
 	game:GetService("VirtualInputManager"):SendKeyEvent(true, "F6" ,false ,game)
 end)
 end)
-
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-
 local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V2", "BloodTheme", blue)
     local Main = Window:NewTab("Hitbox")
     local MainSection = Main:NewSection("HITBOX")
