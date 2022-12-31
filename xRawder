@@ -35,5 +35,6 @@ Button.Text = "EXECUTE"
 Button.TextColor3 = Color3.fromRGB(255, 255, 0)
 Button.TextSize = 17.675
 Button.MouseButton1Down:connect(function()
+wait(1)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/HubByLiverMods'))()
 end)
