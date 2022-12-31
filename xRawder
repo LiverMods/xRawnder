@@ -37,12 +37,3 @@ Button.TextSize = 17.675
 Button.MouseButton1Down:connect(function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/xRawnder/main/HubByLiverMods'))()
 end)
-
-Hitbox. = main
-Hitbox.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
-Hitbox. = UDim2.new(0.114285722, 0, 0.372448981, 0)
-Hitbox. = UDim2.new(0, 90, 0, 40)
-Hitbox. = Enum.Font.SourceSans
-Hitbox. = "Hitbox"
-Hitbox. = Color3.fromRGB(0, 0, 0)
-Hitbox. = 40.000
