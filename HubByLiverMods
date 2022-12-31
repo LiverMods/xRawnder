@@ -195,29 +195,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/
 end)
 PriSection:NewKeybind("Press F6 to close", "Press F6 to close", Enum.KeyCode.F6, function()
     Library:ToggleUI()
-end)
-local Update = Window:NewTab("Updates")
-local UpdateSection = Update:NewSection("🇧🇷PORTUGUÊS🇵🇹")
-UpdateSection:NewLabel("1-Adicionado 'Fly Gui' Na Área 'Outros'")
-end)
-
-UpdateSection:NewLabel("2-Adicionado 'HitBox Ball V2' Na Área 'HitBox' ")
-end)
-
-local UpdateSection = Update:NewSection("🇺🇲ENGLISH🇬🇧")
-UpdateSection:NewLabel("1-Added 'Fly Gui' In the 'Others' Area")
-end)
-
-UpdateSection:NewLabel("2-Added 'HitBox Ball V2' in 'HitBox' area' ")
-end)
-
-local UpdateSection = Update:NewSection("🇲🇽SPANISH🇪🇸")
-UpdateSection:NewLabel("1-Se agregó 'Fly Gui' en el área 'Otros'")
-end)
-
-UpdateSection:NewLabel("2-Se agregó 'HitBox Ball V2' en el área 'HitBox'")
-end)
-
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
 --please do not edit
