@@ -57,10 +57,10 @@ local Window = Library.CreateLib("x-Rawnder. HITBOX UNIVERSAL + Prison Life", "B
 end)
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
-    PlayerSection:NewSlider("Walkspeed PC", "SPEED!!", 500, 16, function(s)
+    PlayerSection:NewSlider("Walkspeed ", "SPEED!!", 500, 16, function(s)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
     end)
-    PlayerSection:NewSlider("Jumppower PC", "JUMP HIGH!!", 350, 50, function(s)
+    PlayerSection:NewSlider("Jumppower", "JUMP HIGH!!", 350, 50, function(s)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
     end)
     PlayerSection:NewButton("Reset WS/JP", "Resets to all defaults", function()
