@@ -45,7 +45,7 @@ end)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
 
-local Window = Library.CreateLib("x-Rawnder. HITBOX UNIVERSAL + Prison Life", "BloodTheme", blue)
+local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V2", "BloodTheme", blue)
     local Main = Window:NewTab("Hitbox")
     local MainSection = Main:NewSection("HITBOX")
     MainSection:NewToggle("HITBOX", "Acerte inimigos, HIT BOX", function(state)
@@ -54,6 +54,9 @@ local Window = Library.CreateLib("x-Rawnder. HITBOX UNIVERSAL + Prison Life", "B
     else
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
     end
+end)
+MainSection:NewButton("HitBox ball V2 ", "não pode ser desativado", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/HitboxV2'))()
 end)
     local Player = Window:NewTab("Player")
     local PlayerSection = Player:NewSection("Player")
@@ -122,6 +125,9 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
  OtherSection:NewButton("Keyboard", "E Usado Muito em celular", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
     end)    
+OtherSection:NewButton("Fly Gui ", "Gui Fly feito por min", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/TGxqcQdY", true))()
+end)
            OtherSection:NewButton("Spider Man", "ande nas paredes!", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
     end)    
@@ -183,16 +189,35 @@ loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
-    end)
-    
+    end)  
      PriSection:NewButton("AUTO HEADSHOT", "Acerte inimigos, não importa onde clica!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
-
-                 PriSection:NewKeybind("Press F6 to close", "Press F6 to close", Enum.KeyCode.F6, function()
+PriSection:NewKeybind("Press F6 to close", "Press F6 to close", Enum.KeyCode.F6, function()
     Library:ToggleUI()
 end)
-
+local Upd = Window:NewTab("Updates")
+    local UpdSection = Upd:NewSection("🇧🇷PORTUGUÊS🇵🇹")
+UpdSection:NewTextBox("1-Adicionado 'Fly Gui' Na Área 'Outros' ", "👍🏼", function(txt)
+	print(txt)
+end)
+UpdSection:NewTextBox("2-Adicionado 'HitBox Ball V2' Na Área 'HitBox' ", "👍🏼", function(txt)
+	print(txt)
+end)
+local UpdSection = Upd:NewSection("🇺🇲ENGLISH🇬🇧")
+UpdSection:NewTextBox("1-Added 'Fly Gui' In the 'Others' Area ", "👍🏼", function(txt)
+	print(txt)
+end)
+UpdSection:NewTextBox("2-Added 'HitBox Ball V2' in 'HitBox' area' ", "👍🏼", function(txt)
+	print(txt)
+end)
+local UpdSection = Upd:NewSection("🇲🇽SPANISH🇪🇸")
+UpdSection:NewTextBox("1-Se agregó 'Fly Gui' en el área 'Otros' ", "👍🏼", function(txt)
+print(txt)
+end)
+UpdSection:NewTextBox("2-Se agregó 'HitBox Ball V2' en el área 'HitBox' ", "👍🏼", function(txt)
+print(txt)
+end)
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
 --please do not edit
