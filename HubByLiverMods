@@ -101,12 +101,12 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
 					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
 				end
 				if module ~= nil then
-					module["MaxAmmo"] = math.huge
-					module["CurrentAmmo"] = math.huge
-					module["StoredAmmo"] = math.huge
+					module["MaxAmmo"] = 25000000
+					module["CurrentAmmo"] = 25000000
+					module["StoredAmmo"] = 25000000
 					module["FireRate"] = 0.00001
 					module["Spread"] = 0
-					module["Range"] = math.huge
+					module["Range"] = 999999
 					module["Bullets"] = 7
 					module["ReloadTime"] = 0.00001
 					module["AutoFire"] = true
