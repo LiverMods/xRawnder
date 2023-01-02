@@ -28,6 +28,8 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "💀";
     Duration = 3.3;
 })
+end)
+
 wait(0.5)
 function f()
    game.Players.LocalPlayer.Character.KillScript:Destroy()
