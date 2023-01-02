@@ -20,17 +20,38 @@ wait(1)
 game.StarterGui:SetCore("SendNotification", {
     Title = "Loading";
     Text = "Activating Immortality";
-    Duration = 2.05;
+    Duration = 1.05;
 })
-wait(2.6)
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Loading";
+    Text = "Activating Immortality";
+    Duration = 1.05;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Loading";
+    Text = "Activating Immortality";
+    Duration = 1.05;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Loading";
+    Text = "Activating Immortality";
+    Duration = 1.5;
+})
+wait(1.6)
 game.StarterGui:SetCore("SendNotification", {
     Title = "Success";
     Text = "💀";
     Duration = 3.3;
 })
-end)
 
-wait(0.5)
+
+wait(1)
+
+
+
 function f()
    game.Players.LocalPlayer.Character.KillScript:Destroy()
 end
