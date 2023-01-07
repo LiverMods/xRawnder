@@ -1,32 +1,32 @@
 game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADING";
 	Text = "...";
-        Duration = 5.5;
+        Duration = 3.2;
 })
-wait(6)
+wait(4)
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADED";
 	Text = "SUCCESS";
-        Duration = 4.47;
+        Duration = 3.77;
 })
-wait(5)
+wait(3)
 
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "POR FAVOR NÃO EDITE NADA";
     Text = "PLEASE DO NOT EDIT ANYTHING";
-    Duration = 7.25;
+    Duration = 4.25;
 })
-wait(7)
+wait(4)
 
  
    game.StarterGui:SetCore("SendNotification", {
 	Title = "NÃO SEJA INCOMPETENTE";
 	Text = "DON'T BE INCOMPETENT";
-        Duration = 7.25;
+        Duration = 4.25;
 })
-wait(7)
+wait(4)
 
     game.StarterGui:SetCore("SendNotification", {
 	Title = "By Liver zMods";
