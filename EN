@@ -121,7 +121,7 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 
     local Tel = Window:NewTab("Teleport")
-    local TelSection = Tel:NewSection("Teleport")
+    local TelSection = Tel:NewSection("prison")
     TelSection:NewButton("Base", "Uma viagem rápida", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 end)
