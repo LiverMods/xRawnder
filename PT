@@ -14,11 +14,11 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/
 end)
     local Player = Window:NewTab("Jogador")
     local PlayerSection = Player:NewSection("Jogador")
-    PlayerSection:NewSlider("Velocidade de caminhada ", "RAPIDEZ!!", 500, 16, function(s)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    PlayerSection:NewSlider("Velocidade", "RAPIDEZ!!", 500, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
     end)
-    PlayerSection:NewSlider("Poder de salto", "SALTAR ALTO!!", 350, 50, function(s)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    PlayerSection:NewSlider("Pulo", "SALTAR ALTO!!", 450, 50, function(p)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = p
     end)
     PlayerSection:NewButton("Redefinir WS/JP", "Redefine para todos os padrões", function()
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
@@ -133,10 +133,10 @@ end)
 TelSection:NewButton("Amory", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(789, 100, 2260)
 end)
-TelSection:NewButton("Yard", "Uma viagem rápida", function()
+TelSection:NewButton("Jardim", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791, 98, 2498)
 end)
-TelSection:NewButton("Gate", "Uma viagem rápida", function()
+TelSection:NewButton("Portão", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 end)
 TelSection:NewButton("Nexus", "Uma viagem rápida", function()
