@@ -90,8 +90,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
 				end
 			end)  
 			
-    local Other = Window:NewTab("Outros")
-    local OtherSection = Other:NewSection("Outros")
+    local Other = Window:NewTab("Others")
+    local OtherSection = Other:NewSection("Others")
     OtherSection:NewButton("F3X", "and useful", function()
         loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
     end)
