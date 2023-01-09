@@ -122,7 +122,7 @@ end)
 
     local Tel = Window:NewTab("Teleport")
     local TelSection = Tel:NewSection("prison life")
-    TelSection:NewButton("Base", "Uma viagem rápida", function()
+    TelSection:NewButton("Base", "a quick trip", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 end)
 TelSection:NewButton("Tower", "a quick trip", function()
