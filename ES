@@ -14,10 +14,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/
 end)
     local Player = Window:NewTab("Jugador")
     local PlayerSection = Player:NewSection("Jugador")
-    PlayerSection:NewSlider("Velocidad", "VELOCIDAD!!", 500, 16, function(s)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    PlayerSection:NewSlider("Velocidad", "VELOCIDAD!!", 500, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
     end)
-    PlayerSection:NewSlider("Salto", "¡¡SALTAR ALTO!!", 350, 50, function(s)
+    PlayerSection:NewSlider("Salto", "¡¡SALTAR ALTO!!", 450, 50, function(s)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
     end)
     PlayerSection:NewButton("Reiniciar WS/JP", "Restablece a todos los valores predeterminados", function()
@@ -33,7 +33,7 @@ end)
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)  
-  PlayerSection:NewButton("Back to Respawn", "better than reset", function()
+  PlayerSection:NewButton("Volver a reaparecer", "mejor que reiniciar", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
@@ -119,15 +119,15 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
-    local Tel = Window:NewTab("Teleporte")
-    local TelSection = Tel:NewSection("Teleporte")
+    local Tel = Window:NewTab("teletransportarse")
+    local TelSection = Tel:NewSection("Prison Life")
     TelSection:NewButton("Base", "Uma viagem rápida", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 end)
 TelSection:NewButton("Torre", "un viaje rápido", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
 end)
-TelSection:NewButton("Prison", "un viaje rápido", function()
+TelSection:NewButton("Prisión", "un viaje rápido", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 end)
 TelSection:NewButton("Amory", "un viaje rápido", function()
@@ -155,7 +155,7 @@ loadstring(game:HttpGet('https://pastebin.com/raw/iZ64yzjE'))();
 end)
           local PriSection = Pri:NewSection("PRISON LIFE . Guión que puede usar!")
  
- PriSection:NewToggle("Fling Risky", "Y arriesgado en otros juegos", function(state)
+ PriSection:NewToggle("Fling Arriesgado", "Y arriesgado en otros juegos", function(state)
         if state then
 loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
