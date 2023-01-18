@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V3", "BloodTheme", blue)
+local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V4", "BloodTheme", blue)
     local Main = Window:NewTab("Hitbox")
     local MainSection = Main:NewSection("HITBOX")
     MainSection:NewToggle("HITBOX", "Golpea a los enemigos, HIT BOX", function(state)
@@ -9,7 +9,7 @@ local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V3", 
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
     end
 end)
-MainSection:NewButton("HitBox ball V2 ", "no se puede deshabilitar", função()
+MainSection:NewButton("HitBox bola V2 ", "no se puede deshabilitar", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/HitboxV2'))()
 end)
     local Player = Window:NewTab("Tú")
@@ -17,7 +17,7 @@ end)
     PlayerSection:NewSlider("Velocidad", "VELOCIDAD!!", 500, 16, function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
     end)
-    PlayerSection:NewSlider("Saltar", "SALTAR MAYOR!!", 450, 50, function(p)
+    PlayerSection:NewSlider("Saltar", "SALTAR ALTO!!", 450, 50, function(p)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = p
     end)
     PlayerSection:NewButton("Reiniciar WS/JP", "Restablece a todos los valores predeterminados", function()
@@ -33,17 +33,17 @@ end)
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)  
-  PlayerSection:NewButton("Regresar a Respawn", "mejor que reiniciar", function()
+  PlayerSection:NewButton("Volver a reaparecer", "mejor que reiniciar", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
 end)
-    local Valk = Window:NewTab("Jogadores")
+    local Valk = Window:NewTab("jugadores")
     local ValkSection = Valk:NewSection("jugadores")
-    ValkSection:NewButton("Auto Headshot", "Acerte inimigos, não importa onde clica!", function()
+    ValkSection:NewButton("Auto Headshot", "Golpea a los enemigos sin importar dónde hagas clic!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
-ValkSection:NewButton("ESP JUGADORES", "Ver personas a través de las paredes, no se puede deshabilitar!", function()
+ValkSection:NewButton("ESP JUGADORES", "Ver personas a través de las paredes, ¡no se puede deshabilitar!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source-Chasms-Script/main/script.lua'))()
     end)
     ValkSection:NewButton("arrestar a todos", "¡Cuidado con otros Scripters!", function()
@@ -53,12 +53,12 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
             local Gun = Window:NewTab("Arma")
 			local GunSection = Gun:NewSection("Arma")
 			
-			GunSection:NewDropdown("recoger arma", "Da armas al jugador.", {"M9", "Remington 870", "AK-47"}, function(v)
+			GunSection:NewDropdown("Recoger arma", "Da armas al jugador.", {"M9", "Remington 870", "AK-47"}, function(v)
 				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
 				local Event = game:GetService("Workspace").Remote.ItemHandler
 				Event:InvokeServer(A_1)
 			end)
-			GunSection:NewDropdown("Modo de arma", "Hace que el arma dispare más", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+			GunSection:NewDropdown("Mod Arma", "Hace que el arma dispare más", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -76,8 +76,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 					module["AutoFire"] = true
 				end
 			end)  
-			local GunSection = Gun:NewSection("⚠️⚠️NO LO RECOMIENDO ⚠️⚠️")
-				GunSection:NewDropdown("Arma Lag", "So 1 tiro causa lag eterno!", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+			local GunSection = Gun:NewSection("⚠️⚠️ NO LO RECOMIENDO ⚠️⚠️")
+				GunSection:NewDropdown("Arma Lag", "¡Solo 1 disparo causa un retraso eterno!", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -96,8 +96,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 					module["AutoFire"] = true
 				end
 			end)  
-    local Team = Window:NewTab("Equipe")
-    local TeamSection = Team:NewSection("Equipe")
+    local Team = Window:NewTab("Equipo")
+    local TeamSection = Team:NewSection("Equipo")
     TeamSection:NewButton("PRISIONERO", "#️⃣", function()
     workspace.Remote.TeamEvent:FireServer("Bright orange")
     end)
@@ -109,7 +109,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
 wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
-    wait(0.8)
+    wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
 wait(0.1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
@@ -117,25 +117,25 @@ for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do
 lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
 end
     end)
+      TeamSection:NewButton("NEUTRAL", "#️⃣", function()
+    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+    end)
     
                  local Menu = Window:NewTab("Ui")
                  local MenuSection = Menu:NewSection("Ui")
-    MenuSection:NewKeybind("Pressione F6 para fechar", "Pressione F6 para fechar", Enum.KeyCode.F6, function()
+    MenuSection:NewKeybind("Presione F6 para cerrar", "Presione F6 para cerrar", Enum.KeyCode.F6, function()
     Library:ToggleUI()
     end)
 
-    TeamSection:NewButton("NEUTRAL", "#️⃣", function()
-    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-    end)
     local Other = Window:NewTab("Otros")
     local OtherSection = Other:NewSection("Otros")
-    OtherSection:NewButton("F3X", "Es útil", function()
+    OtherSection:NewButton("F3X", "y útil", function()
         loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
     end)
-    OtherSection:NewButton("Infinite Yield", "comando de administradores", function()
+    OtherSection:NewButton("Infinite Yield", "comando de administrador", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end)     
- OtherSection:NewButton("Teclado", "Y Usado Mucho En Móvil", function()
+ OtherSection:NewButton("Keyboard", "Y Usado Mucho En Móvil", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
     end)    
 OtherSection:NewButton("Fly Gui ", "Gui Fly hecho por mí", function()
@@ -144,8 +144,9 @@ end)
            OtherSection:NewButton("Spider Man", "caminar sobre las paredes!", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
     end)    
-    OtherSection:NewKeybind("Presiona T para obtener TpTool", "usa para teletransportarte", Enum.KeyCode.T, function()
-mouse = game.Players.LocalPlayer:GetMouse()
+
+    OtherSection:NewKeybind("Presione T para obtener TpTool", "usar para teletransportarse", Enum.KeyCode.T, function()
+	mouse = game.Players.LocalPlayer:GetMouse()
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = "TpTool"
@@ -157,7 +158,6 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 
-
     local Tel = Window:NewTab("teletransportarse")
 local TelSection = Tel:NewSection("Prison Life")
 TelSection:NewButton("Base", "Un viaje rápido", function()
@@ -166,7 +166,7 @@ end)
 TelSection:NewButton("Torre", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
 end)
-TelSection:NewButton("Alcantarilla", "Un viaje rápido", function()
+TelSection:NewButton("Alcantarillado", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.33, 78.65, 2292.54)
 end)
 TelSection:NewButton("Prisión", "Un viaje rápido", function()
@@ -175,37 +175,37 @@ end)
 TelSection:NewButton("Amory", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(789, 100, 2260)
 end)
-TelSection:NewButton("Cafetería", "Un viaje rápido, function()
+TelSection:NewButton("Cafetería", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.994873046875, 99.98993682861328, 2325.73095703125)
 end)
-TelSection:NewButton("puerta 3", "Un viaje rápido, function()
+TelSection:NewButton("Puerta 3", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(539.16, 98.19, 2183.42)
 end)
-TelSection:NewButton("Celdas de prisión", "Un viaje rápido, function()
+TelSection:NewButton("Celdas de prisión", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
 end)
 TelSection:NewButton("Jardín", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791, 98, 2498)
 end)
-TelSection:NewButton("Puerta", "Un viaje rápido", function()
+TelSection:NewButton("Gate", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 end)
 TelSection:NewButton("Cocina", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
 end)
-TelSection:NewButton("torre de la puerta", "Un viaje rápido", function()
+TelSection:NewButton("Gate Tower", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(502, 126, 2306)
 end)
 TelSection:NewButton("Nexus", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100, 2388)
 end)
-TelSection:NewButton("puerta 2", "Un viaje rápido", function()
+TelSection:NewButton("Puerta 2", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(461.31, 98.19, 2253.86)
 end) 
-TelSection:NewButton("terraza de la prisión", "Un viaje rápido", function()
+TelSection:NewButton("Prison Terrace", "Un viaje rápido", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(922.79, 118.99, 2384.05)
 end) 
-     
+
            local Pri = Window:NewTab("Prison Life Hubs")
             local PriSection = Pri:NewSection("Puerta")
         PriSection:NewButton("Abre la puerta", "Ábrela sin hacer clic, me refiero al botón, ¡no a este!!", function()
@@ -223,16 +223,8 @@ loadstring(game:HttpGet('https://pastebin.com/raw/iZ64yzjE'))();
 end)
           local PriSection = Pri:NewSection("PRISON LIFE . Script que talvez Você Use!")
  
- PriSection:NewToggle("Fling Arriesgado", "Y arriesgado en otros juegos", function(state)
-        if state then
+ PriSection:NewButton("Fling Arriesgado", "Y arriesgado en otros partidos", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
-        else
-            
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-        end
     end)  
      
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
