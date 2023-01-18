@@ -12,7 +12,7 @@ end)
 MainSection:NewButton("HitBox ball V2 ", "não pode ser desativado", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/HitboxV2'))()
 end)
-    local Player = Window:NewTab("Jogador")
+    local Player = Window:NewTab("Você")
     local PlayerSection = Player:NewSection("Jogador")
     PlayerSection:NewSlider("Velocidade", "RAPIDEZ!!", 500, 16, function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
@@ -24,12 +24,12 @@ end)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-    PlayerSection:NewToggle("Shift Op", "melhor que shift! em alguns jogos", function(state)
+    PlayerSection:NewToggle("Shift", "melhor que shift! em alguns jogos", function(state)
         if state then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 58
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 54
         else
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)  
@@ -38,11 +38,19 @@ local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
 end)
-    PlayerSection:NewButton("ESP JOGADORAS", "Veja pessoas atraves das paredes, não podera ser desativado!", function()
+    local Valk = Window:NewTab("Jogadores")
+    local ValkSection = Valk:NewSection("Jogadores")
+    ValkSection:NewButton("Auto Headshot", "Acerte inimigos, não importa onde clica!", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
+end)
+ValkSection:NewButton("ESP JOGADORAS", "Veja pessoas atraves das paredes, não podera ser desativado!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source-Chasms-Script/main/script.lua'))()
     end)
+    ValkSection:NewButton("Arrest All", "Tome Cuidado com os outros Scripter!", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
+ end)
     
-            local Gun = Window:NewTab("PRISON Arma")
+            local Gun = Window:NewTab("Arma")
 			local GunSection = Gun:NewSection("Arma")
 			
 			GunSection:NewDropdown("Pegar Arma", "Dá armas ao jogador", {"M9", "Remington 870", "AK-47"}, function(v)
@@ -58,12 +66,11 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
 					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
 				end
 				if module ~= nil then
-					module["MaxAmmo"] = 25000000
-					module["CurrentAmmo"] = 25000000
-					module["StoredAmmo"] = 25000000
+					module["MaxAmmo"] = math.huge
+					module["StoredAmmo"] = math.huge
 					module["FireRate"] = 0.00001
 					module["Spread"] = 0
-					module["Range"] = 9999999
+					module["Range"] = math.huge
 					module["Bullets"] = 7
 					module["ReloadTime"] = 0.00001
 					module["AutoFire"] = true
@@ -78,18 +85,48 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
 					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
 				end
 				if module ~= nil then
-					module["MaxAmmo"] = 0
+					module["MaxAmmo"] = 99
 					module["CurrentAmmo"] = 1
-					module["StoredAmmo"] = 0
+					module["StoredAmmo"] = 99
 					module["FireRate"] = 0.5
 					module["Spread"] = 0
-					module["Range"] = 1000000000000000000
-					module["Bullets"] = 999999999999
-					module["ReloadTime"] = 1
+					module["Range"] = math.huge
+					module["Bullets"] = math.huge
+					module["ReloadTime"] = 0.5
 					module["AutoFire"] = true
 				end
 			end)  
-			
+    local Team = Window:NewTab("Equipe")
+    local TeamSection = Team:NewSection("Equipe")
+    TeamSection:NewButton("PRISIONEIRO", "#️⃣", function()
+    workspace.Remote.TeamEvent:FireServer("Bright orange")
+    end)
+    TeamSection:NewButton("GUARDA", "#️⃣", function()
+    workspace.Remote.TeamEvent:FireServer("Bright blue")
+    end)
+    TeamSection:NewButton("CRIMINOSO", "#️⃣", function()
+    wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
+    wait(0.3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
+wait(0.1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
+for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do 
+lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
+end
+    end)
+    
+                 local Menu = Window:NewTab("Ui")
+                 local MenuSection = Menu:NewSection("Ui")
+    MenuSection:NewKeybind("Pressione F6 para fechar", "Pressione F6 para fechar", Enum.KeyCode.F6, function()
+    Library:ToggleUI()
+    end)
+
+    TeamSection:NewButton("NEUTRO", "#️⃣", function()
+    Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
+    end)
     local Other = Window:NewTab("Outros")
     local OtherSection = Other:NewSection("Outros")
     OtherSection:NewButton("F3X", "e último", function()
@@ -119,19 +156,32 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
+
     local Tel = Window:NewTab("Teleporte")
-    local TelSection = Tel:NewSection("Prison Life")
-    TelSection:NewButton("Base", "Uma viagem rápida", function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
+local TelSection = Tel:NewSection("Prison Life")
+TelSection:NewButton("Base", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 end)
 TelSection:NewButton("Torre", "Uma viagem rápida", function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
+end)
+TelSection:NewButton("Esgoto", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.33, 78.65, 2292.54)
 end)
 TelSection:NewButton("Prison", "Uma viagem rápida", function()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 end)
 TelSection:NewButton("Amory", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(789, 100, 2260)
+end)
+TelSection:NewButton("Cafeteria", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.994873046875, 99.98993682861328, 2325.73095703125)
+end)
+TelSection:NewButton("Portão 3", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(539.16, 98.19, 2183.42)
+end)
+TelSection:NewButton("Celas de Prisão", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
 end)
 TelSection:NewButton("Jardim", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791, 98, 2498)
@@ -139,10 +189,27 @@ end)
 TelSection:NewButton("Portão", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 end)
+TelSection:NewButton("Cozinha", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
+end)
+TelSection:NewButton("Torre Do Portão", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(502, 126, 2306)
+end)
 TelSection:NewButton("Nexus", "Uma viagem rápida", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100, 2388)
-end)          
+end)
+TelSection:NewButton("Portão 2", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(461.31, 98.19, 2253.86)
+end) 
+TelSection:NewButton("Terraço Da prisão", "Uma viagem rápida", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(922.79, 118.99, 2384.05)
+end) 
+
            local Pri = Window:NewTab("Prison Life Hubs")
+            local PriSection = Pri:NewSection("Portão")
+        PriSection:NewButton("Abra o Portão", "Abra ele sem clicar, digo no butão, não nesse!!", function()
+                 workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
+            end)
                  local PriSection = Pri:NewSection("HUB")
           PriSection:NewButton("Prevail", "Gui Op", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/mHfK0Xk4", true))()
@@ -166,12 +233,7 @@ loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
             game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         end
     end)  
-     PriSection:NewButton("Auto Headshot", "Acerte inimigos, não importa onde clica!", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
-end)
-PriSection:NewKeybind("Pressione F6 para fechar", "Pressione F6 para fechar", Enum.KeyCode.F6, function()
-    Library:ToggleUI()
-end)
+     
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
 --please do not edit
