@@ -24,14 +24,8 @@ end)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-    PlayerSection:NewToggle("Shift", "melhor que shift! em alguns jogos", function(state)
-        if state then
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 54
-        else
-            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-            game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
-        end
+    PlayerSection:NewButton("Shift", "melhor que shift! em alguns jogos", function(state)
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
     PlayerSection:NewButton("Super Soco", "Op", function()
 mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = true local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
@@ -110,17 +104,16 @@ end)
     workspace.Remote.TeamEvent:FireServer("Bright blue")
     end)
     TeamSection:NewButton("CRIMINOSO", "#️⃣", function()
-    wait(0.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
-wait(0.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
-    wait(0.3)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-976.125183, 109.123924, 2059.99536)
-wait(0.1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
-for i,v in pairs(Workspace.Prison_ITEMS.giver:GetChildren()) do 
-lol = Workspace.Remote.ItemHandler:InvokeServer(v.ITEMPICKUP)
-end
+    wait(0.2)
+CRIM = game.Workspace["Criminals Spawn"].SpawnLocation
+CRIM.CanCollide = false
+CRIM.Size = Vector3.new(51.05, 24.12, 54.76)
+CRIM.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+CRIM.Transparency = 1
+wait(0.2)
+CRIM.CFrame = CFrame.new(-920.510803, 92.2271957, 2138.27002, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+CRIM.Size = Vector3.new(6, 0.2, 6)
+CRIM.Transparency = 0
     end)
     
                  local Menu = Window:NewTab("Ui")
