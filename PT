@@ -24,7 +24,7 @@ end)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
     end)
-    PlayerSection:NewButton("Shift", "melhor que shift! em alguns jogos", function(state)
+    PlayerSection:NewButton("Shift", "melhor que shift! em alguns jogos", function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
     PlayerSection:NewButton("Super Soco", "Op", function()
