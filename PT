@@ -1,7 +1,15 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
 local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V4", "BloodTheme", blue)
-    local Main = Window:NewTab("Hitbox")
-    local MainSection = Main:NewSection("HITBOX")
+    local Main = Window:NewTab("COMBATE")
+    local MainSection = Main:NewSection("COMBATE")
+MainSection:NewToggle("Kill Aura", "Mate Tudo ao redor", function(state)
+    if state then
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
+    else
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
+    end
+end)
+
     MainSection:NewToggle("HITBOX", "Acerte inimigos, HIT BOX", function(state)
     if state then
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF552'),true))()
@@ -9,8 +17,14 @@ local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V4", 
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
     end
 end)
+MainSection:NewButton("Super Soco", "Op", function()
+mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = true local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
+ end)
 MainSection:NewButton("HitBox ball V2 ", "não pode ser desativado", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/HitboxV2'))()
+end)
+MainSection:NewButton("Auto Headshot", "Acerte inimigos, não importa onde clica!", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
     local Player = Window:NewTab("Você")
     local PlayerSection = Player:NewSection("Jogador")
@@ -27,9 +41,7 @@ end)
     PlayerSection:NewButton("Shift", "melhor que shift! em alguns jogos", function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
-    PlayerSection:NewButton("Super Soco", "Op", function()
-mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = true local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
- end)
+  
   PlayerSection:NewButton("Voltar para o Respawn", "melhor que reset", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
@@ -37,9 +49,6 @@ Event:InvokeServer(A_1)
 end)
     local Valk = Window:NewTab("Jogadores")
     local ValkSection = Valk:NewSection("Jogadores")
-    ValkSection:NewButton("Auto Headshot", "Acerte inimigos, não importa onde clica!", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
-end)
 ValkSection:NewButton("ESP JOGADORAS", "Veja pessoas atraves das paredes, não podera ser desativado!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source-Chasms-Script/main/script.lua'))()
     end)
@@ -230,3 +239,49 @@ loadstring(game:HttpGet("https://pastebin.com/raw/YmjW2qU8"))();
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
 --please do not edit
+
+spawn(function()
+wait(0.001)
+game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
+end)
+
+
+--[[
+
+• functions
+• Funções
+• funciones
+
+--]]
+
+mainRemotes = game.ReplicatedStorage
+meleeRemote = mainRemotes['meleeEvent']
+
+killAura = true
+
+contextactionservice = game.ContextActionService
+
+function toggleKillAura(actionName, inputState, inputObject)
+print('Doing the action : ' .. actionName)
+if inputState == Enum.UserInputState.Begin then
+if killAura == true then
+killAura = false
+else
+killAura = true
+end
+end
+end
+
+contextactionservice:BindAction('ToggleKillAura', toggleKillAura, false, Enum.KeyCode.U)
+
+while wait() do
+if killAura == true then
+for _, plr in pairs (game:GetService('Players'):GetChildren()) do
+if plr.Name ~= game.Players.LocalPlayer.Name then
+meleeRemote:FireServer(plr)
+end
+end
+end
+end
+
+-- end functions
