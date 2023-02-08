@@ -165,8 +165,7 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 
-OtherSection:NewButton("Fly Car Gui", "vuelos de carros, apoyo a todos los ejecutores Móviles
-", function()
+OtherSection:NewButton("Fly Car Gui", "vuelos de carros, apoyo a todos los ejecutores Móviles", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/ModsScriptsGames-/main/FlyCar'))()
     end)    
 
