@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
 local Window = Library.CreateLib("x-Rawnder HITBOX UNIVERSAL + Prison Life V5", "BloodTheme", blue)
-    local Main = Window:NewTab("COMBATE")
-    local MainSection = Main:NewSection("COMBATE")
+    local Main = Window:NewTab("Combate")
+    local MainSection = Main:NewSection("Combate")
 MainSection:NewToggle("Kill Aura", "Mate Tudo ao redor", function(state)
     if state then
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
@@ -163,6 +163,9 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
+OtherSection:NewButton("Fly Car Gui", "vooe de carro, suporte para todos executores Moblies", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/ModsScriptsGames-/main/FlyCar'))()
+    end)    
 
     local Tel = Window:NewTab("Teleporte")
 local TelSection = Tel:NewSection("Fora Da prisão")
