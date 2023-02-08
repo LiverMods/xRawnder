@@ -249,6 +249,11 @@ wait(0.001)
 game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
 end)
 
+spawn(function()
+wait(0.4) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+end)
+
+
 
 --[[
 
