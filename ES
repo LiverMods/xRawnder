@@ -76,11 +76,11 @@ end)
 				if module ~= nil then
 					module["MaxAmmo"] = math.huge
 					module["StoredAmmo"] = math.huge
-					module["FireRate"] = 0.00001
-					module["Spread"] = 0
+					module["FireRate"] = -math.huge
+					module["Spread"] = -math.huge
 					module["Range"] = math.huge
 					module["Bullets"] = 7
-					module["ReloadTime"] = 0.00001
+					module["ReloadTime"] = -math.huge
 					module["AutoFire"] = true
 				end
 			end)  
@@ -131,7 +131,10 @@ CRIM.Transparency = 0
                  local Menu = Window:NewTab("Ui")
                  local MenuSection = Menu:NewSection("Ui")
     MenuSection:NewKeybind("Presione F6 para cerrar", "Presione F6 para cerrar", Enum.KeyCode.F6, function()
-    Library:ToggleUI()
+    spawn(function()
+    local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://9119720940" Sound:Play()
+    wait(0.05) 
+Library:ToggleUI()
     end)
 
     local Other = Window:NewTab("Otros")
