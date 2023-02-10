@@ -136,6 +136,7 @@ TeamSection:NewButton("NEUTRAL", "#️⃣", function()
     wait(0.05) 
 Library:ToggleUI()
     end)
+    end)
 
    
     local Other = Window:NewTab("Others")
