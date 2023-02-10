@@ -130,7 +130,9 @@ CRIM.Transparency = 0
     MenuSection:NewKeybind("Pressione F6 para fechar", "Pressione F6 para fechar", Enum.KeyCode.F6, function()
     spawn(function()
     local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://9119720940" Sound:Play()
-    wait(0.3) Library:ToggleUI()
+    wait(0.2) 
+Library:ToggleUI()
+    end)
     end)
 
     TeamSection:NewButton("NEUTRO", "#️⃣", function()
@@ -251,7 +253,7 @@ game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
 end)
 
 spawn(function()
-wait(0.4) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
 end)
 
 --[[
