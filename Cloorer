@@ -136,6 +136,7 @@ Frame2.Visible = true
 local vim = game:service("VirtualInputManager")
 vim:SendKeyEvent(true, "F6", false, game)
 end)
+wait(0.6)
 
 Frame2.Parent = ScreenGui
 Frame2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
