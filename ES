@@ -61,7 +61,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 	GunSection:NewButton("súper cuchillo", "Hacer Op", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
 end)
-GunSection:NewButton("Auto pergar Amas", "Op", function()
+GunSection:NewButton("auto pargar niñeras", "Op", function()
 while true do
 
 wait(0.05)
