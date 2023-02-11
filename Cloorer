@@ -1,0 +1,161 @@
+    game.StarterGui:SetCore("SendNotification", {
+	Title = "LOADING";
+	Text = "...";
+    Duration = 2; }) wait(2)
+        
+    game.StarterGui:SetCore("SendNotification", {
+	Title = "Loaded";
+	Text = "Success";
+    Duration = 2; }) wait(2)
+
+    spawn(function()
+wait(0) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://851699118" Sound:Play()
+end)
+    
+    game.StarterGui:SetCore("SendNotification", {
+	Title = "By Liver zMods";
+	Text = "created by Brazilian!";
+    Icon = "rbxthumb://type=Asset&id=11935866652&w=150&h=150";
+    Duration = 30; }) wait(3.5)
+
+
+
+			local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))();
+wait(0.2)
+local Window = Library.CreateLib("x-Rawnder", "Midnight")
+wait(0.2)
+			-- MAIN
+			local Main = Window:NewTab("languages")
+			wait(0.1)
+		    local MainSection = Main:NewSection("Hub Gui")
+			wait(0.1)
+			-- LOCATION
+			local Loc = Window:NewTab("Location Updates")
+			wait(0.2)
+			local LocSection = Loc:NewSection("Location Updates")
+			wait(0.1)
+			-- CREDITS
+			local Cre = Window:NewTab("Credits: Liver zMods")
+			wait(0.1)
+			local CreSection = Cre:NewSection("Made by Liver zMods")
+			wait(0.1)
+			-- MAIN SECTION
+spawn(function()
+wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+end)
+           MainSection:NewButton("Português", "🇧🇷 - 🇵🇹 - ...", function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.pt"))()
+           end)
+           wait(0.15)
+           MainSection:NewButton("English", "🇺🇲 - 🇬🇧 - ...", function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520%2520%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520.obb"))()
+           end)
+           wait(0.15)
+           MainSection:NewButton("Español", "🇲🇽 - 🇪🇸 - ...", function()
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/C%26%2320%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520%252520%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520.data"))() 
+           end) 
+           wait(0.18)
+           -- LOCATION SECTION
+          local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V6 Info", "info", {"🇵🇹 1- Auto Arma 🇧🇷", "🇵🇹 otimizamo nos menus 🇧🇷"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V5 Info", "info", {"🇵🇹 1- Adicionado Kill Aura 🇧🇷", "🇵🇹 2- Adicionado Área Combate 🇧🇷", "🇵🇹 3- Adicionado Fly Car Gui  🇧🇷", "🇵🇹 4- Área 'HitBox' excluido 🇧🇷", "🇵🇹 5 - Organizamento nas opções 🇧🇷"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V4 Info", "info", {"🇵🇹 1- Adicionado mas Teleportes 🇧🇷", "🇵🇹 2- Adicionado super soco 🇧🇷", "🇵🇹 3 - Adicionado Super Faca 🇧🇷", "🇵🇹 4- Adicionado Preder Todos 🇧🇷", "🇵🇹 5 - Teleportes Organizados 🇧🇷"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V3 Info", "info", {"🇵🇹 1- V3 nova versão 🇧🇷", "🇵🇹 2- Adicionado novas Línguas 🇧🇷", "🇵🇹 3 - Adicionado Armas Crash 🇧🇷"}, function(v)
+          print(v)
+          end)      
+           wait(0.15)
+           --ing
+           local LocSection = Loc:NewSection("English INFO")
+LocSection:NewDropdown("V6 Info", "info", {"🇺🇲 1 - auto weapon 🇬🇧", "🇺🇲 used in menus 🇬🇧"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V5 Info", "info", {"🇺🇲 1- Added Kill Aura 🇬🇧", "🇺🇲 2- Added Combat Area 🇬🇧", "🇺🇲 3- Added Fly Car Gui  🇬🇧", "🇺🇲 4- Area 'HitBox' deleted 🇬🇧", "🇺🇲 5 - Organization in options 🇬🇧"}, function(v)
+          print(v)
+          end)      
+     LocSection:NewDropdown("V4 Info", "info", {"🇺🇲 1- Added more Teleports 🇬🇧", "🇺🇲 2- Added super punch 🇬🇧", "🇺🇲 3 - Added Super Knife 🇬🇧", "🇺🇲 4- Added Prefer All 🇬🇧", "🇺🇲 5 - Organized Teleports 🇬🇧"}, function(v)
+     print(v)
+end)      
+wait(0.55)
+            LocSection:NewDropdown("V3 Info", "info", {"🇺🇲 1- v3 new version 🇬🇧", "🇺🇲 2- Added new languages 🇬🇧", "🇺🇲 3 - Added Gun Crash🇬🇧"}, function(v)
+print(v)
+end)
+           wait(0.15)
+           -- esp
+           local LocSection = Loc:NewSection("Español INFO")
+LocSection:NewDropdown("V6 Info", "info", {"🇪🇸 1- Auto Arma 🇲🇽", "🇪🇸 menú optimizado 🇲🇽"}, function(v)
+          print(v)
+          end)      
+                   LocSection:NewDropdown("V5 Info", "info", {"🇪🇸 1- Se agregó Kill Aura 🇲🇽", "🇪🇸 2- Área de combate añadida 🇲🇽", "🇪🇸 3- Se agregó Fly Car Gui  🇲🇽", "🇪🇸 4- Área 'HitBox' eliminada 🇲🇽", "🇪🇸5 - Organización en opciones 🇲🇽"}, function(v)
+                   print(v)
+                   end)      
+                   LocSection:NewDropdown("V4 Info", "info", {"🇪🇸 1- Se agregaron más teletransportes 🇲🇽", "🇪🇸 2- Se agregó Super Punch 🇲🇽", "🇪🇸 3 - Se agregó Super Knife 🇲🇽", "🇪🇸 4- Se agregó Preder All 🇲🇽", "🇪🇸 5 - Teletransportes organizados 🇲🇽"}, function(v)
+                   print(v)
+                   end)      
+                   wait(0.15)
+                   LocSection:NewDropdown("V3 Info", "info", {"🇪🇸 1- Nueva versión V3 🇲🇽", "🇪🇸 2- Se agregaron nuevos idiomas 🇲🇽", "🇪🇸 3 - Armas de crash añadidas 🇲🇽"}, function(v)
+                   print(v)
+end)
+ -- ok
+
+
+task.wait(1.5)
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local Frame2 = Instance.new("Frame")
+local TextButton2 = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(0,255,0)
+Frame.Position = UDim2.new(0, 0, 0.40, 0)
+Frame.Size = UDim2.new(0, 90, 0, 30)
+Frame.Active = true
+Frame.Draggable = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
+TextButton.Size = UDim2.new(0, 90, 0, 30)
+TextButton.Font = Enum.Font.Kalam
+TextButton.Text = "OPEN"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 25.550
+TextButton.MouseButton1Click:connect(function()
+Frame.Visible = false
+Frame2.Visible = true    
+local vim = game:service("VirtualInputManager")
+vim:SendKeyEvent(true, "F6", false, game)
+end)
+
+Frame2.Parent = ScreenGui
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Frame2.Position = UDim2.new(0, 0, 0.40, 0)
+Frame2.Size = UDim2.new(0, 90, 0, 30)
+Frame2.Active = true
+Frame2.Draggable = true
+
+TextButton2.Parent = Frame2
+TextButton2.BackgroundColor3 = Color3.fromRGB(255,0,0)
+TextButton2.Size = UDim2.new(0, 90, 0, 30)
+TextButton2.Font = Enum.Font.Kalam
+TextButton2.Text = "CLOSE"
+TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton2.TextSize = 25.550
+TextButton2.MouseButton1Click:connect(function()
+    Frame2.Visible = false
+    Frame.Visible = true
+local vim = game:service("VirtualInputManager")
+vim:SendKeyEvent(true, "F6", false, game)
+end)
+
+Frame.Parent.Active = true
+Frame.Parent.Draggable = true
+
+--V6
