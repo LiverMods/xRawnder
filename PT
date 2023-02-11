@@ -58,46 +58,13 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
     
             local Gun = Window:NewTab("Arma")
 			local GunSection = Gun:NewSection("Arma")
+local GunSection = Gun:NewSection("⚠️Atenção!! A função pegar Arma, e auto arma foram excluidos, por causa da Altualização, é essas opções não iam fazer nada!⚠️")
 			GunSection:NewButton("Super Faca", "Faca Op", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
 end)
+local GunSection = Gun:NewSection("⚠️A função da 'Super faca' só funciona se tiver com a faca no inventário⚠️")
 
-GunSection:NewButton("Auto pergar Armas", "Op", function()
-while true do
-
-wait(0.05)
-
-local args = {
-    [1] = workspace.Prison_ITEMS.giver.M9.ITEMPICKUP
-}
-
-workspace.Remote.ItemHandler:InvokeServer(unpack(args))
-
-wait(0.1)
-
-local args = {
-    [1] = workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP
-}
-
-workspace.Remote.ItemHandler:InvokeServer(unpack(args))
-
-wait(0.1)
-
-local args = {
-    [1] = workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP
-}
-
-workspace.Remote.ItemHandler:InvokeServer(unpack(args))
-task.wait(1)
-end
-end)
-
-			GunSection:NewDropdown("Pegar Arma", "Dá armas ao jogador", {"M9", "Remington 870", "AK-47"}, function(v)
-				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
-				local Event = game:GetService("Workspace").Remote.ItemHandler
-				Event:InvokeServer(A_1)
-			end)
-			GunSection:NewDropdown("Mod Arma", "Faz a arma dar mas disparos", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+GunSection:NewDropdown("Mod Arma", "Faz a arma dar mas disparos", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
