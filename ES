@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V5", "BloodTheme", blue)
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V6", "BloodTheme", blue)
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("Combate")
 MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(state)
@@ -42,7 +42,7 @@ end)
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
 
-  PlayerSection:NewButton("Volver a reaparecer", "mejor que reiniciar", function()
+  PlayerSection:NewButton("Volver a reaparecer 'No funciona'", "mejor que reiniciar", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
@@ -61,7 +61,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 	GunSection:NewButton("súper cuchillo", "Hacer Op", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
 end)
-GunSection:NewButton("auto pargar niñeras", "Op", function()
+GunSection:NewButton("auto pargar niñeras 'No funciona'", "Op", function()
 while true do
 
 wait(0.05)
@@ -92,7 +92,7 @@ end
 end)
 
 
-			GunSection:NewDropdown("Recoger arma", "Da armas al jugador.", {"M9", "Remington 870", "AK-47"}, function(v)
+			GunSection:NewDropdown("Recoger arma 'No funciona'", "Da armas al jugador.", {"M9", "Remington 870", "AK-47"}, function(v)
 				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
 				local Event = game:GetService("Workspace").Remote.ItemHandler
 				Event:InvokeServer(A_1)
@@ -255,7 +255,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100
 end)
            local Pri = Window:NewTab("Prison Life Hubs")
             local PriSection = Pri:NewSection("Puerta")
-        PriSection:NewButton("Abre la puerta", "Ábrela sin hacer clic, me refiero al botón, ¡no a este!!", function()
+        PriSection:NewButton("Abre la puerta 'No funciona'", "Ábrela sin hacer clic, me refiero al botón, ¡no a este!!", function()
                  workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
             end)
                  local PriSection = Pri:NewSection("HUB")
