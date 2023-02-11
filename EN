@@ -41,7 +41,7 @@ end)
     PlayerSection:NewButton("Shift", "better than shift! in some games", function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
-PlayerSection:NewButton("Return to Respawn", "better than reset", function()
+PlayerSection:NewButton("Return to Respawn 'does not work'", "better than reset", function()
 local A_1 = "\66\114\111\121\111\117\98\97\100\100"
 local Event = game:GetService("Workspace").Remote.loadchar
 Event:InvokeServer(A_1)
@@ -54,7 +54,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
     ValkSection:NewButton("Arrest All", "Watch out for other Scripters!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
  end)
-GunSection:NewButton("auto pick up weapons", "Op", function()
+GunSection:NewButton("auto pick up weapons 'does not work'", "Op", function()
 while true do
 
 wait(0.05)
@@ -91,7 +91,7 @@ end)
 			GunSection:NewButton("Super knife", "Faca Op", function()
                         loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
                         end)
-			GunSection:NewDropdown("Grab Weapon", "Gives the player weapons", {"M9", "Remington 870", "AK-47"}, function(v)
+			GunSection:NewDropdown("Grab Weapon 'does not work'", "Gives the player weapons", {"M9", "Remington 870", "AK-47"}, function(v)
 				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
 				local Event = game:GetService("Workspace").Remote.ItemHandler
 				Event:InvokeServer(A_1)
@@ -256,7 +256,7 @@ end)
 
            local Pri = Window:NewTab("Prison Life Hubs")
             local PriSection = Pri:NewSection("Gate")
-        PriSection:NewButton("Open the gate", "Open it without clicking, I mean the button, not this one!!", function()
+        PriSection:NewButton("Open the gate 'does not work'", "Open it without clicking, I mean the button, not this one!!", function()
                  workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
             end)
                  local PriSection = Pri:NewSection("HUB")
