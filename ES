@@ -61,6 +61,37 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 	GunSection:NewButton("súper cuchillo", "Hacer Op", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
 end)
+GunSection:NewButton("Auto pergar Amas", "Op", function()
+while true do
+
+wait(0.05)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver.M9.ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+task.wait(1)
+end
+end)
+
+
 			GunSection:NewDropdown("Recoger arma", "Da armas al jugador.", {"M9", "Remington 870", "AK-47"}, function(v)
 				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
 				local Event = game:GetService("Workspace").Remote.ItemHandler
