@@ -124,16 +124,15 @@ TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 TextButton.Size = UDim2.new(0, 90, 0, 30)
 TextButton.Font = Enum.Font.Kalam
-TextButton.Text = OPEN"
+TextButton.Text = "OPEN"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 26.000
+TextButton.TextSize = 25.550
 TextButton.MouseButton1Click:connect(function()
 Frame.Visible = false
 Frame2.Visible = true    
 local vim = game:service("VirtualInputManager")
 vim:SendKeyEvent(true, "F6", false, game)
 end)
-
 
 Frame2.Parent = ScreenGui
 Frame2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
@@ -148,7 +147,7 @@ TextButton2.Size = UDim2.new(0, 90, 0, 30)
 TextButton2.Font = Enum.Font.Kalam
 TextButton2.Text = "CLOSE"
 TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton2.TextSize = 26.000
+TextButton2.TextSize = 25.550
 TextButton2.MouseButton1Click:connect(function()
     Frame2.Visible = false
     Frame.Visible = true
