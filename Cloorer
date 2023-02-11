@@ -1,5 +1,5 @@
     game.StarterGui:SetCore("SendNotification", {
-	Title = "LOADING ...";
+	Title = "LOADING";
 	Text = "...";
     Duration = 2; }) wait(2)
         
@@ -7,12 +7,10 @@
 	Title = "Loaded";
 	Text = "Success";
     Duration = 2; }) wait(2)
-    
-    wait(0.2)
-    local Sound 
-    = Instance.new("Sound" game:GetService("SoundService"))
-    Sound.SoundId = "rbxassetid://851699118" 
-    Sound:Play()
+
+    spawn(function()
+wait(0) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://851699118" Sound:Play()
+end)
     
     game.StarterGui:SetCore("SendNotification", {
 	Title = "By Liver zMods";
@@ -42,6 +40,9 @@ wait(0.2)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
 			wait(0.1)
 			-- MAIN SECTION
+spawn(function()
+wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+end)
            MainSection:NewButton("Português", "🇧🇷 - 🇵🇹 - ...", function()
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.pt"))()
            end)
@@ -70,10 +71,10 @@ wait(0.2)
           end)      
            wait(0.15)
            --ing
+           local LocSection = Loc:NewSection("English INFO")
 LocSection:NewDropdown("V6 Info", "info", {"🇺🇲 1 - auto weapon 🇬🇧", "🇺🇲 used in menus 🇬🇧"}, function(v)
           print(v)
           end)      
-           local LocSection = Loc:NewSection("English INFO")
           LocSection:NewDropdown("V5 Info", "info", {"🇺🇲 1- Added Kill Aura 🇬🇧", "🇺🇲 2- Added Combat Area 🇬🇧", "🇺🇲 3- Added Fly Car Gui  🇬🇧", "🇺🇲 4- Area 'HitBox' deleted 🇬🇧", "🇺🇲 5 - Organization in options 🇬🇧"}, function(v)
           print(v)
           end)      
@@ -86,10 +87,10 @@ print(v)
 end)
            wait(0.15)
            -- esp
+           local LocSection = Loc:NewSection("Español INFO")
 LocSection:NewDropdown("V6 Info", "info", {"🇪🇸 1- Auto Arma 🇲🇽", "🇪🇸 menú optimizado 🇲🇽"}, function(v)
           print(v)
           end)      
-           local LocSection = Loc:NewSection("Español INFO")
                    LocSection:NewDropdown("V5 Info", "info", {"🇪🇸 1- Se agregó Kill Aura 🇲🇽", "🇪🇸 2- Área de combate añadida 🇲🇽", "🇪🇸 3- Se agregó Fly Car Gui  🇲🇽", "🇪🇸 4- Área 'HitBox' eliminada 🇲🇽", "🇪🇸5 - Organización en opciones 🇲🇽"}, function(v)
                    print(v)
                    end)      
@@ -99,10 +100,6 @@ LocSection:NewDropdown("V6 Info", "info", {"🇪🇸 1- Auto Arma 🇲🇽", "�
                    wait(0.15)
                    LocSection:NewDropdown("V3 Info", "info", {"🇪🇸 1- Nueva versión V3 🇲🇽", "🇪🇸 2- Se agregaron nuevos idiomas 🇲🇽", "🇪🇸 3 - Armas de crash añadidas 🇲🇽"}, function(v)
                    print(v)
-end)
-wait()
-spawn(function()
-wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
 end)
  -- ok
 
@@ -136,7 +133,7 @@ Frame2.Visible = true
 local vim = game:service("VirtualInputManager")
 vim:SendKeyEvent(true, "F6", false, game)
 end)
-wait(0.6)
+
 
 Frame2.Parent = ScreenGui
 Frame2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
