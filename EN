@@ -54,6 +54,37 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source
     ValkSection:NewButton("Arrest All", "Watch out for other Scripters!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
  end)
+GunSection:NewButton("auto pick up weapons", "Op", function()
+while true do
+
+wait(0.05)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver.M9.ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+wait(0.1)
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver["AK-47"].ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+task.wait(1)
+end
+end)
+
+
     
             local Gun = Window:NewTab("Gun")
 			local GunSection = Gun:NewSection("Gun")
