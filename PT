@@ -261,7 +261,7 @@ end)
 
            local Pri = Window:NewTab("Prison Life Hubs")
             local PriSection = Pri:NewSection("Portão")
-        PriSection:NewButton("Abra o Portão", "Abra ele sem clicar, digo no butão, não nesse!!", function()
+        PriSection:NewButton("Abra o Portão 'Não Fouciona'", "Abra ele sem clicar, digo no butão, não nesse!!", function()
                  workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
             end)
                  local PriSection = Pri:NewSection("HUB")
