@@ -124,7 +124,7 @@ TextButton.Parent = Frame
 TextButton.BackgroundColor3 = Color3.fromRGB(0,255,0)
 TextButton.Size = UDim2.new(0, 90, 0, 30)
 TextButton.Font = Enum.Font.Kalam
-TextButton.Text = "CLOSE"
+TextButton.Text = "OPEN"
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 27.000
 TextButton.MouseButton1Click:connect(function()
@@ -146,7 +146,7 @@ TextButton2.Parent = Frame2
 TextButton2.BackgroundColor3 = Color3.fromRGB(255,0,0)
 TextButton2.Size = UDim2.new(0, 90, 0, 30)
 TextButton2.Font = Enum.Font.Kalam
-TextButton2.Text = "OPEN"
+TextButton2.Text = "CLOSE"
 TextButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton2.TextSize = 27.000
 TextButton2.MouseButton1Click:connect(function()
