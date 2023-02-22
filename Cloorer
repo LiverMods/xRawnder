@@ -2,6 +2,8 @@
 	Title = "LOADING";
 	Text = "...";
     Duration = 2; }) wait(2)
+
+if game.PlaceId == 155615604 then
         
     game.StarterGui:SetCore("SendNotification", {
 	Title = "Loaded";
@@ -157,4 +159,8 @@ end)
 
 Frame.Parent.Active = true
 Frame.Parent.Draggable = true
+
+
+
+end
 --V6
