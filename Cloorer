@@ -20,6 +20,7 @@ game.StarterGui:SetCore("SendNotification", {
 	Title = "V7 upgrade";
 	Text = "Thanks for using my Script 😁";
     Duration = 10; }) wait(2)
+end)
     
     game.StarterGui:SetCore("SendNotification", {
 	Title = "By Liver zMods";
