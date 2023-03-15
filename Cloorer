@@ -14,14 +14,7 @@ if game.PlaceId == 155615604 then
 wait(0) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://851699118" Sound:Play()
 end)
 
-task.spawn(function()
-wait(7)
-game.StarterGui:SetCore("SendNotification", {
-	Title = "V7 upgrade";
-	Text = "Thanks for using my Script 😁";
-    Duration = 10; }) wait(2)
-end)
-    
+
     game.StarterGui:SetCore("SendNotification", {
 	Title = "By Liver zMods";
 	Text = "created by Brazilian!";
@@ -128,7 +121,13 @@ end)
 
 
 
-
+spawn(function()
+wait(7)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "V7 upgrade";
+	Text = "Thanks for using my Script 😁";
+    Duration = 10; })
+end)
 
 end
 --V7
