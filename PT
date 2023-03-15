@@ -60,8 +60,13 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 			local GunSection = Gun:NewSection("Arma")
 
 
-		
-GunSection:NewButton("Pegar todas Armas", "Op", function()
+    
+
+			GunSection:NewButton("Super faca ", "Tenha na mão ✋", function()
+                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
+                        end)
+
+			GunSection:NewButton("Pegar todas Armas", "Op", function()
 local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFrame()
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP.Position))
 		for i =1,2 do
@@ -93,19 +98,6 @@ local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFr
 
 end)
 
-
-    
-            
-
-			GunSection:NewButton("Super faca ", "Tenha na mão ✋", function()
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
-                        end)
-
-			GunSection:NewDropdown("Pegar Arma 'Não Fouciona'", "Gives the player weapons", {"M9", "Remington 870", "AK-47"}, function(v)
-				local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
-				local Event = game:GetService("Workspace").Remote.ItemHandler
-				Event:InvokeServer(A_1)
-			end)
 GunSection:NewDropdown("Mod Arma", "Faz a arma dar mas disparos", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
@@ -133,14 +125,14 @@ GunSection:NewDropdown("Mod Arma", "Faz a arma dar mas disparos", {"M9", "Reming
 					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
 				end
 				if module ~= nil then
-					module["MaxAmmo"] = 99
+					module["MaxAmmo"] = 99999999999
 					module["CurrentAmmo"] = 1
-					module["StoredAmmo"] = 99
-					module["FireRate"] = 0.5
-					module["Spread"] = 0
+					module["StoredAmmo"] = 9999999999
+					module["FireRate"] = 0
+					module["Spread"] = 0.1
 					module["Range"] = math.huge
 					module["Bullets"] = math.huge
-					module["ReloadTime"] = 0.5
+					module["ReloadTime"] = -math.huge
 					module["AutoFire"] = true
 				end
 			end)  
