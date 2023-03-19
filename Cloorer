@@ -131,35 +131,17 @@ wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) So
 end)
            MainSection:NewButton("Português", "🇧🇷 - 🇵🇹 - ...", function()
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.pt"))()
-           spawn(function()
-           wait(14)
-           game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 nova versão 🎉";
-	       Text = "Obrigado pelos mais de 1.000 usuários que usam meu script 😁";
-            Duration = 24; })
-           end)
+           
            end)
            wait(0.15)
            MainSection:NewButton("English", "🇺🇲 - 🇬🇧 - ...", function()
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520%2520%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520.obb"))()
-           spawn(function()
-           wait(14)
-           game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 new version 🎉";
-	       Text = "Thanks for the 1.000+ users who use my script 😁";
-            Duration = 24; })
-           end)
+          
            end)
            wait(0.15)
            MainSection:NewButton("Español", "🇲🇽 - 🇪🇸 - ...", function()
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/C%26%2320%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520%252520%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520.data"))() 
-           spawn(function()
-           wait(14)
-           game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 nueva versión 🎉";
-	       Text = "Gracias por los más de 1.000 usuarios que usan mi script 😁";
-            Duration = 24; })
-           end)
+           
            end) 
            wait(0.18)
            -- LOCATION SECTION
@@ -456,6 +438,16 @@ end)
 	   Text = "{ PC / computer } version";
            Duration = 24; })
            end)
+
+           spawn(function()
+           wait(14)
+           game.StarterGui:SetCore("SendNotification", {
+           Title = "V8 new version 🎉";
+	    Text = "Thanks for the 1.000+ users who use my script 😁";
+            Duration = 24; })
+           end)
+
+
 end
 --V8
 
