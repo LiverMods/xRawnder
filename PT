@@ -98,7 +98,7 @@ local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFr
 
 end)
 
-GunSection:NewDropdown("Mod Gun { tentando ser discreto }", "Faz a arma dar mas disparos", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+GunSection:NewDropdown("Mod Arma { tentando ser discreto }", "Faz a arma dar mas disparos", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
