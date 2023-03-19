@@ -287,13 +287,19 @@ Frame.Parent.Draggable = true
 
 end)
 
-
+           spawn(function()
+           wait(3)
+           game.StarterGui:SetCore("SendNotification", {
+           Title = "MOBLIE";
+	   Text = "{ MOBLIE } version";
+           Duration = 24; })
+           end)
 
 end
 --V8
 end)
 
-xRaSection:NewButton("PC / NOTEBOOK", "👍🏼", function()
+xRaSection:NewButton("PC / COMPUTER", "👍🏼", function()
  game.StarterGui:SetCore("SendNotification", {
 	Title = "LOADING";
 	Text = "...";
@@ -319,7 +325,7 @@ end)
 
 
 
-			local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))();
+			local Library =loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))();
 wait(0.2)
 local Window = Library.CreateLib("x-Rawnder", "Midnight")
 wait(0.2)
@@ -446,7 +452,13 @@ end)
  -- ok
 
 
-
+           spawn(function()
+           wait(3)
+           game.StarterGui:SetCore("SendNotification", {
+           Title = "PC / COMPUTER";
+	   Text = "{ PC / computer } version";
+           Duration = 24; })
+           end)
 end
 --V8
 
