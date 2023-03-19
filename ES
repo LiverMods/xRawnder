@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V7", "BloodTheme", blue)
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V8", "BloodTheme", blue)
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("Combate")
 MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(state)
@@ -160,7 +160,7 @@ CRIM.Transparency = 0
     
                  local Menu = Window:NewTab("Ui")
                  local MenuSection = Menu:NewSection("Ui")
-    MenuSection:NewKeybind("Presione F6 para cerrar", "Presione F6 para cerrar", Enum.KeyCode.F6, function()
+    MenuSection:NewKeybind("Presione {CTRL DIREITA} para cerrar", "Presione {CTRL DIREITO} para cerrar", Enum.KeyCode.RightControl, function()
     spawn(function()
     local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://9119720940" Sound:Play()
     wait(0.05) 
