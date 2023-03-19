@@ -92,6 +92,26 @@ local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFr
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(saved)
 
 end)
+
+GunSection:NewDropdown("Mod Gun { trying to be discreet }", "Makes the gun fire more", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+				local module = nil
+				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
+					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
+				elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild(v) then
+					module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
+				end
+				if module ~= nil then	
+					module["StoredAmmo"] = 300
+					module["FireRate"] = -math.huge
+					module["Spread"] = -math.huge
+					module["Range"] = 4000
+					module["Bullets"] = 3
+					module["ReloadTime"] = -math.huge
+					module["AutoFire"] = true
+				end
+			end)  
+
+
 			GunSection:NewDropdown("Weapon Mod", "Makes the gun fire more", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
