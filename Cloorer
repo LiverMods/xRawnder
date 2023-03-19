@@ -448,7 +448,7 @@ end
 
 end)
            spawn(function()
-           wait(16)
+           wait(26)
            game.StarterGui:SetCore("SendNotification", {
            Title = "V8 new version 🎉";
 	   Text = "Thanks for the 1.000+ users who use my script 😁";
