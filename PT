@@ -159,7 +159,7 @@ CRIM.Transparency = 0
     
                  local Menu = Window:NewTab("Ui")
                  local MenuSection = Menu:NewSection("Ui")
-    MenuSection:NewKeybind("Pressione F6 para fechar", "Pressione F6 para fechar", Enum.KeyCode.F6, function()
+    MenuSection:NewKeybind("Pressione {CTRL DIREITO} para fechar", "Pressione  {CTRL DIREITO} para fechar", Enum.KeyCode.RightControl, function()
     spawn(function()
     local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://9119720940" Sound:Play()
     wait(0.05) 
