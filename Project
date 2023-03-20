@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/xRawnder/main/HubMoblieName/MainV8"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/xRawnder/main/V8.0/2023"))()
 --[[
        Feito por Liver zMods
        Made by Liver zMods
