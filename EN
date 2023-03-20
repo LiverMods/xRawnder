@@ -58,8 +58,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
     
             local Gun = Window:NewTab("Gun")
 			local GunSection = Gun:NewSection("Gun")
-			GunSection:NewButton("Super knife", "have the knife in hand ✋", function()
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
+			GunSection:NewButton("Iron Bar", "Op", function()
+                        loadstring(game:HttpGet('https://github.com/LiverMods/Script-New-/blob/main/Toogle'))()
                         end)
 			GunSection:NewButton("Get All Weapons", "Op", function()
 local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFrame()
