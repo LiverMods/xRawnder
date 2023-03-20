@@ -62,8 +62,8 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
 
     
 
-			GunSection:NewButton("Super faca ", "Tenha na mão ✋", function()
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/FFFFFFFFN/%C2%A3%C2%A2HOOOBEN'))()
+			GunSection:NewButton("Barra de ferro", "op", function()
+                        loadstring(game:HttpGet('https://github.com/LiverMods/Script-New-/blob/main/Toogle'))()
                         end)
 
 			GunSection:NewButton("Pegar todas Armas", "Op", function()
