@@ -59,8 +59,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
             local Gun = Window:NewTab("Arma")
 			local GunSection = Gun:NewSection("Arma")
 	GunSection:NewButton("barra de acero", "Op", function()
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/raw/main/Googggle'))()
-                        end)
+task.spawn(function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/raw/main/Googggle'))()
+end)
+end)
 
 
 
