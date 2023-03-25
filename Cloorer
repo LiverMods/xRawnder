@@ -273,6 +273,16 @@ end)
 	   Text = "{ MOBLIE } version";
            Duration = 24; })
            end)
+else
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+Sound.SoundId = "rbxassetid://2323663829"
+Sound:Play()
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Error";
+	Text = "Wrong Game, Enter Prison Life";
+    Duration = 260;
+})
 
 end
 --V8
@@ -442,6 +452,16 @@ end)
 
            
 
+else
+local Sound = Instance.new("Sound",game:GetService("SoundService"))
+Sound.SoundId = "rbxassetid://2323663829"
+Sound:Play()
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Error";
+	Text = "Wrong Game, Enter Prison Life";
+    Duration = 260;
+})
 
 end
 --V8
