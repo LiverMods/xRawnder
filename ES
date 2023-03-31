@@ -2,16 +2,13 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikd
 local Window = Library.CreateLib("x-Rawnder 'Prison Life' V8", "BloodTheme", blue)
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("Combate")
-MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(state)
-    if state then
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
-    else
-        game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
-    end
+MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(xRawnder)
+        killAura = xRawnder
 end)
 
-    MainSection:NewToggle("HITBOX", "Golpea a los enemigos, HIT BOX", function(state)
-    if state then
+
+    MainSection:NewToggle("HITBOX", "Golpea a los enemigos, HIT BOX", function(xRawnder)
+    if xRawnder then
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF552'),true))()
     else
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
@@ -42,15 +39,38 @@ end)
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
 
-  PlayerSection:NewButton("Volver a reaparecer 'No funciona'", "mejor que reiniciar", function()
-local A_1 = "\66\114\111\121\111\117\98\97\100\100"
-local Event = game:GetService("Workspace").Remote.loadchar
-Event:InvokeServer(A_1)
+  PlayerSection:NewToggle("Noclip", "cruzar la pared", function(status)
+	getgenv().Noclip = status
+	while true do
+		if not getgenv().Noclip then return end
+		game.RunService.Stepped:wait()
+		for i, v in pairs(plr.Character:GetDescendants()) do
+			if v:IsA('BasePart') then
+				v.CanCollide = false
+			end
+		end
+	end
+end)
+PlayerSection:NewToggle("Saltos infinitos", "Op", function(value)
+	getgenv().InfiniteJump = value
+	game.UserInputService.JumpRequest:connect(function()
+		if not getgenv().InfiniteJump then return end
+		plr.Character.Humanoid:ChangeState('Jumping')
+	end)
 end)
     local Valk = Window:NewTab("jugadores")
     local ValkSection = Valk:NewSection("jugadores")
-ValkSection:NewButton("ESP JUGADORES", "Ver personas a través de las paredes, ¡no se puede deshabilitar!", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/VapingCat/Open-Source-Chasms-Script/main/script.lua'))()
+ValkSection:NewButton("ESP JUGADORES", "Ver personas a través de las paredes, ¡no se puede deshabilitar!", function(xRawnder)
+
+getgenv().enabled = xRawnder
+        getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
+        getgenv().outlineuseteamcolor = true --Toggle outline color using player team color on/off
+        getgenv().fillcolor = Color3.new(0, 0, 0) --Change fill color, no need to edit if using team color
+        getgenv().outlinecolor = Color3.new(1, 1, 1) --Change outline color, no need to edit if using team color
+        getgenv().filltrans = 0.75 --Change fill transparency
+        getgenv().outlinetrans = 0 --Change outline transparency
+ 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
     end)
     ValkSection:NewButton("arrestar a todos", "¡Cuidado con otros Scripters!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
@@ -65,7 +85,7 @@ end)
 end)
 
 
-
+local GunSection = Gun:NewSection("Armas de fuego")
 			GunSection:NewButton("Conseguir Todas Las Armas", "Op", function()
 local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFrame()
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP.Position))
@@ -97,6 +117,7 @@ local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFr
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(saved)
 
 end)
+local GunSection = Gun:NewSection("Modificaciones de armas")
 
 GunSection:NewDropdown("Mod Arma { tratando de ser discreto }", "Hace que el arma dispare más", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
@@ -299,16 +320,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/
 --please do not edit
 
 
-spawn(function()
-wait(0.001)
-game:GetService("VirtualInputManager"):SendKeyEvent(true, "U" ,false ,game)
-end)
 
 spawn(function()
-wait(0.4) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+wait(0.2) local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
 end)
-
-
 
 --[[
 
@@ -317,16 +332,17 @@ end)
 • funciones
 
 --]]
-
 mainRemotes = game.ReplicatedStorage
 meleeRemote = mainRemotes['meleeEvent']
 
-killAura = true
+spawn(function()
+wait(0.0029288888883333)
+killAura = false
+end)
 
 contextactionservice = game.ContextActionService
 
 function toggleKillAura(actionName, inputState, inputObject)
-print('Doing the action : ' .. actionName)
 if inputState == Enum.UserInputState.Begin then
 if killAura == true then
 killAura = false
@@ -336,7 +352,6 @@ end
 end
 end
 
-contextactionservice:BindAction('ToggleKillAura', toggleKillAura, false, Enum.KeyCode.U)
 
 while wait() do
 if killAura == true then
@@ -347,5 +362,18 @@ end
 end
 end
 end
+
+wait(time)
+
+while wait() do
+if killAura == true then
+for _, plr in pairs (game:GetService('Players'):GetChildren()) do
+if plr.Name ~= game.Players.LocalPlayer.Name then
+meleeRemote:FireServer(plr)
+end
+end
+end
+end
+
 
 -- end functions
