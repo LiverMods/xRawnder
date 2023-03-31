@@ -1,4 +1,5 @@
 spawn(function()
+
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
 local message = Instance.new("Message",workspace)
@@ -19,6 +20,8 @@ task.wait(0.2)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.7
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)                 task.wait(0.1)
+
+
 
 local chat = {
     [1] = "Credits: Liver zMods",
@@ -146,7 +149,10 @@ end)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
-          LocSection:NewDropdown("V8 Info", "info", {"🇵🇹 1- adicionado PC/MOBLIE 🇧🇷", "🇵🇹 2- Adicionado Mod Arma V2 🇧🇷", "🇵🇹 3- Substituição da 'super faca' pela 'Barra de ferro' 🇧🇷"}, function(v)
+          LocSection:NewDropdown("V9 Info", "info", {"🇵🇹 1- Adicionado Noclip 🇧🇷", "🇵🇹 2- Adicionado Pulos infinitos 🇧🇷", "🇵🇹 3- melhoramos o kill Aura  🇧🇷", "🇵🇹 4 - Organizamento na aba Arma 🇧🇷"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V8 Info", "info", {"🇵🇹 1- Adicionado PC/MOBLIE 🇧🇷", "🇵🇹 2- Adicionado Mod Arma V2 🇧🇷", "🇵🇹 3- Substituição da 'super faca' pela 'Barra de ferro' 🇧🇷"}, function(v)
           print(v)
           end)      
           LocSection:NewDropdown("V7 Info", "info", {"🇵🇹 1- Adicionado Pegar todas As armas, fouciona 🇧🇷", "🇵🇹 melhoramos algumas funções 🇧🇷"}, function(v)
@@ -167,6 +173,9 @@ end)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V9 Info", "info", {"🇺🇲 1 - Added Noclip 🇬🇧", "🇺🇲 2- Added Infinite Jumps  🇬🇧", "🇺🇲 3 - we improved kill aura 🇬🇧", "🇺🇲 4 - Organization in the Weapon tab 🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V8 Info", "info", {"🇺🇲 1 - Added PC/MOBILE 🇬🇧", "🇺🇲 2- Added Weapon Mod V2 🇬🇧", "🇺🇲 3- Replacement of the 'Super Knife' by the 'Iron Bar' 🇬🇧"}, function(v)
           print(v)
           end)      
@@ -189,6 +198,9 @@ end)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V9 Info", "info", {"🇪🇸 1- Noclip agregado 🇲🇽", "🇪🇸 2- Saltos infinitos agregados 🇲🇽", "🇪🇸 3- Kill Aura mejorado 🇲🇽", "🇪🇸 4 - Organización en la pestaña Arma 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V8 Info", "info", {"🇪🇸 1- añadir PC/MÓVIL 🇲🇽", "🇪🇸 2- Arma agregada Mod V2 🇲🇽", "🇪🇸 3- Sustitución del 'Super Knife' por la 'Iron Bar' 🇲🇽"}, function(v)
                    print(v)
                    end)      
@@ -210,7 +222,7 @@ end)
 end)
  -- ok
 spawn(function()
-task.wait(1.5)
+task.wait(2.5)
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
@@ -274,15 +286,29 @@ end)
            Duration = 24; })
            end)
 else
+local player = game.Players:GetPlayerFromCharacter(char)
+
+local teleportService = game:GetService("TeleportService")
+
 local Sound = Instance.new("Sound",game:GetService("SoundService"))
 Sound.SoundId = "rbxassetid://2323663829"
 Sound:Play()
 
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Error";
-	Text = "Wrong Game, Enter Prison Life";
-    Duration = 260;
-})
+local speedDesertBindable = Instance.new('BindableFunction')
+function speedDesertBindable.OnInvoke(state)
+	if state == 'join Prison Life' then
+		teleportService:Teleport(155615604, player )
+
+	end
+end
+	game.StarterGui:SetCore('SendNotification', {
+		Title = "Error";
+	    Text = "no support for this game";
+		Duration = math.huge,
+		Callback = speedDesertBindable,
+		Button1 = 'join Prison Life',
+		Button2 = '❌'
+	})
 
 end
 --V8
@@ -376,7 +402,10 @@ end)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
-          LocSection:NewDropdown("V8 Info", "info", {"🇵🇹 1- adicionado PC/MOBLIE 🇧🇷", "🇵🇹 2- Adicionado Mod Arma V2 🇧🇷", "🇵🇹 3- Substituição da 'super faca' pela 'Barra de ferro' 🇧🇷"}, function(v)
+          LocSection:NewDropdown("V9 Info", "info", {"🇵🇹 1- Adicionado Noclip 🇧🇷", "🇵🇹 2- Adicionado Pulos infinitos 🇧🇷", "🇵🇹 3- melhoramos o kill Aura  🇧🇷", "🇵🇹 4 - Organizamento na aba Arma 🇧🇷"}, function(v)
+          print(v)
+          end)      
+          LocSection:NewDropdown("V8 Info", "info", {"🇵🇹 1- Adicionado PC/MOBLIE 🇧🇷", "🇵🇹 2- Adicionado Mod Arma V2 🇧🇷", "🇵🇹 3- Substituição da 'super faca' pela 'Barra de ferro' 🇧🇷"}, function(v)
           print(v)
           end)      
           LocSection:NewDropdown("V7 Info", "info", {"🇵🇹 1- Adicionado Pegar todas As armas, fouciona 🇧🇷", "🇵🇹 melhoramos algumas funções 🇧🇷"}, function(v)
@@ -397,6 +426,9 @@ end)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V9 Info", "info", {"🇺🇲 1 - Added Noclip 🇬🇧", "🇺🇲 2- Added Infinite Jumps  🇬🇧", "🇺🇲 3 - we improved kill aura 🇬🇧", "🇺🇲 4 - Organization in the Weapon tab 🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V8 Info", "info", {"🇺🇲 1 - Added PC/MOBILE 🇬🇧", "🇺🇲 2- Added Weapon Mod V2 🇬🇧", "🇺🇲 3- Replacement of the 'Super Knife' by the 'Iron Bar' 🇬🇧"}, function(v)
           print(v)
           end)      
@@ -419,6 +451,9 @@ end)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V9 Info", "info", {"🇪🇸 1- Noclip agregado 🇲🇽", "🇪🇸 2- Saltos infinitos agregados 🇲🇽", "🇪🇸 3- Kill Aura mejorado 🇲🇽", "🇪🇸 4 - Organización en la pestaña Arma 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V8 Info", "info", {"🇪🇸 1- añadir PC/MÓVIL 🇲🇽", "🇪🇸 2- Arma agregada Mod V2 🇲🇽", "🇪🇸 3- Sustitución del 'Super Knife' por la 'Iron Bar' 🇲🇽"}, function(v)
                    print(v)
                    end)      
@@ -437,8 +472,6 @@ end)
                    wait(0.15)
                    LocSection:NewDropdown("V3 Info", "info", {"🇪🇸 1- Nueva versión V3 🇲🇽", "🇪🇸 2- Se agregaron nuevos idiomas 🇲🇽", "🇪🇸 3 - Armas de crash añadidas 🇲🇽"}, function(v)
                    print(v)
-
-           
 end)
  -- ok
            spawn(function()
@@ -453,24 +486,38 @@ end)
            
 
 else
+local player = game.Players:GetPlayerFromCharacter(char)
+
+local teleportService = game:GetService("TeleportService")
+
 local Sound = Instance.new("Sound",game:GetService("SoundService"))
 Sound.SoundId = "rbxassetid://2323663829"
 Sound:Play()
 
-game.StarterGui:SetCore("SendNotification", {
-	Title = "Error";
-	Text = "Wrong Game, Enter Prison Life";
-    Duration = 260;
-})
+local speedDesertBindable = Instance.new('BindableFunction')
+function speedDesertBindable.OnInvoke(state)
+	if state == 'join Prison Life' then
+		teleportService:Teleport(155615604, player )
+
+	end
+end
+	game.StarterGui:SetCore('SendNotification', {
+		Title = "Error";
+	    Text = "no support for this game";
+		Duration = math.huge,
+		Callback = speedDesertBindable,
+		Button1 = 'join Prison Life',
+		Button2 = '❌'
+	})
 
 end
---V8
+--V9
 
 end)
            spawn(function()
-           wait(26)
+           wait(36)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 new version 🎉";
-	   Text = "Thanks for the 1.000+ users who use my script 😁";
-           Duration = 24; })
+           Title = "V9 new version 🎉";
+	      Text = "Thanks for the 1.500+ users who use my script 😁";
+           Duration = 25; })
            end)
