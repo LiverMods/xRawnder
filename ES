@@ -1,3 +1,5 @@
+local plr = game.Players.LocalPlayer
+local mouse = plr:GetMouse()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
 local Window = Library.CreateLib("x-Rawnder 'Prison Life' V8", "BloodTheme")
 local Aba1 = Window:NewTab("Bienvenido")
