@@ -1,5 +1,8 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V8", "BloodTheme", blue)
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V8", "BloodTheme")
+local Aba1 = Window:NewTab("Bienvenido")
+local TesteSection = Aba1:NewSection("Bienvenido " .. plr.Name)
+
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("Combate")
 MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(xRawnder)
