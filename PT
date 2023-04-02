@@ -381,5 +381,10 @@ end
 end
 end
 
+local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
+   hint.Text = "x-Rawnder loaded"
+   hint.Name = game.JobId
+   task.wait(6)
+   hint:Destroy()
 
 -- end functions
