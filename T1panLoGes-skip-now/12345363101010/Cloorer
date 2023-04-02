@@ -285,6 +285,15 @@ end)
 	   Text = "{ MOBLIE } version";
            Duration = 24; })
            end)
+
+spawn(function()
+           wait(36)
+           game.StarterGui:SetCore("SendNotification", {
+           Title = "V9 new version 🎉";
+	   Text = "Thanks for the 1.500+ users who use my script 😁";
+           Duration = 25; })
+           end)
+
 else
 local player = game.Players:GetPlayerFromCharacter(char)
 
@@ -483,7 +492,20 @@ end)
            end)
 
 
-           
+           spawn(function()
+           wait(36)
+           game.StarterGui:SetCore("SendNotification", {
+           Title = "V9 new version 🎉";
+	      Text = "Thanks for the 1.500+ users who use my script 😁";
+           Duration = 25; })
+           end)
+
+
+spawn(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/raw/main/Alls/01"))()
+end)
+
+
 
 else
 local player = game.Players:GetPlayerFromCharacter(char)
@@ -514,10 +536,4 @@ end
 --V9
 
 end)
-           spawn(function()
-           wait(36)
-           game.StarterGui:SetCore("SendNotification", {
-           Title = "V9 new version 🎉";
-	      Text = "Thanks for the 1.500+ users who use my script 😁";
-           Duration = 25; })
-           end)
+           
