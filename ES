@@ -76,6 +76,15 @@ end)
     PlayerSection:NewButton("Shift", "mejor que cambiar! en algunos juegos", function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
+    PlayerSection:NewToggle("Auto correr", "Camina incluso si te golpea un taser", function(xRawnder)
+	_G.Farm = (xRawnder and true or false)
+	wait()
+	while _G.Farm == true do
+		wait()
+		 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 56
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24.51
+	end
+end)
 
   PlayerSection:NewToggle("Noclip", "cruzar la pared", function(status)
 	getgenv().Noclip = status
