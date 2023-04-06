@@ -16,7 +16,7 @@ spawn(function()
 task.wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
-task.wait(0.2)
+task.wait(0.8)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.7
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)                 task.wait(0.1)
@@ -126,7 +126,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 31/03/23")
+                        local CreSection = Cre:NewSection("latest update: 05/04/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -149,6 +149,9 @@ end)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V10 Info", "info", {"🇵🇹 1- Adicionado Gravidade e + 🇧🇷", "🇵🇹 2- Adicionado Área: Jogo 🇧🇷", "🇵🇹 3- Removido área 'bem vindo'  🇧🇷", "🇵🇹 4 - Organizamento na aba: Jogador 🇧🇷"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V9 Info", "info", {"🇵🇹 1- Adicionado Noclip 🇧🇷", "🇵🇹 2- Adicionado Pulos infinitos 🇧🇷", "🇵🇹 3- melhoramos o kill Aura  🇧🇷", "🇵🇹 4 - Organizamento na aba Arma 🇧🇷"}, function(v)
           print(v)
           end)      
@@ -173,6 +176,9 @@ end)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V10 Info", "info", {"🇺🇲 1 - Added Gravity and + 🇬🇧", "🇺🇲 2- Added Area: Game 🇬🇧", "🇺🇲 3 - Removed 'welcome ' area 🇬🇧", "🇺🇲 4 - Tab organization: Player 🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V9 Info", "info", {"🇺🇲 1 - Added Noclip 🇬🇧", "🇺🇲 2- Added Infinite Jumps  🇬🇧", "🇺🇲 3 - we improved kill aura 🇬🇧", "🇺🇲 4 - Organization in the Weapon tab 🇬🇧"}, function(v)
           print(v)
           end)      
@@ -198,6 +204,9 @@ end)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V10 Info", "info", {"🇪🇸 1- Se agregó Gravedad y + 🇲🇽", "🇪🇸 2- Área agregada: Juego 🇲🇽", "🇪🇸 3- Se eliminó el área de 'bienvenida' 🇲🇽", "🇪🇸 4 - Organización de pestañas: Jugador 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V9 Info", "info", {"🇪🇸 1- Noclip agregado 🇲🇽", "🇪🇸 2- Saltos infinitos agregados 🇲🇽", "🇪🇸 3- Kill Aura mejorado 🇲🇽", "🇪🇸 4 - Organización en la pestaña Arma 🇲🇽"}, function(v)
                    print(v)
                    end)   
@@ -289,8 +298,8 @@ end)
 spawn(function()
            wait(36)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V9 new version 🎉";
-	   Text = "Thanks for the 1.500+ users who use my script 😁";
+           Title = "V10 new version 🎉";
+	   Text = "Thanks for the 2.000+ users who use my script 😁";
            Duration = 25; })
            end)
 
@@ -371,7 +380,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 31/03/23")
+                        local CreSection = Cre:NewSection("latest update: 05/04/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -383,7 +392,7 @@ end)
            spawn(function()
            wait(14)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 nova versão 🎉";
+           Title = "V10 nova versão 🎉";
 	       Text = "Obrigado pelos mais de 1.000 usuários que usam meu script 😁";
             Duration = 24; })
            end)
@@ -395,7 +404,7 @@ end)
            spawn(function()
            wait(14)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 new version 🎉";
+           Title = "V10 new version 🎉";
 	       Text = "Thanks for the 1.000+ users who use my script 😁";
             Duration = 24; })
            end)
@@ -407,7 +416,7 @@ end)
            spawn(function()
            wait(14)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V8 nueva versión 🎉";
+           Title = "V10 nueva versión 🎉";
 	       Text = "Gracias por los más de 1.000 usuarios que usan mi script 😁";
             Duration = 24; })
            end)
@@ -415,6 +424,9 @@ end)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V10 Info", "info", {"🇵🇹 1- Adicionado Gravidade e + 🇧🇷", "🇵🇹 2- Adicionado Área: Jogo 🇧🇷", "🇵🇹 3- Removido área 'bem vindo'  🇧🇷", "🇵🇹 4 - Organizamento na aba: Jogador 🇧🇷"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V9 Info", "info", {"🇵🇹 1- Adicionado Noclip 🇧🇷", "🇵🇹 2- Adicionado Pulos infinitos 🇧🇷", "🇵🇹 3- melhoramos o kill Aura  🇧🇷", "🇵🇹 4 - Organizamento na aba Arma 🇧🇷"}, function(v)
           print(v)
           end)      
@@ -439,6 +451,9 @@ end)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V10 Info", "info", {"🇺🇲 1 - Added Gravity and + 🇬🇧", "🇺🇲 2- Added Area: Game 🇬🇧", "🇺🇲 3 - Removed 'welcome ' area 🇬🇧", "🇺🇲 4 - Tab organization: Player 🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V9 Info", "info", {"🇺🇲 1 - Added Noclip 🇬🇧", "🇺🇲 2- Added Infinite Jumps  🇬🇧", "🇺🇲 3 - we improved kill aura 🇬🇧", "🇺🇲 4 - Organization in the Weapon tab 🇬🇧"}, function(v)
           print(v)
           end)      
@@ -464,6 +479,9 @@ end)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V10 Info", "info", {"🇪🇸 1- Se agregó Gravedad y + 🇲🇽", "🇪🇸 2- Área agregada: Juego 🇲🇽", "🇪🇸 3- Se eliminó el área de 'bienvenida' 🇲🇽", "🇪🇸 4 - Organización de pestañas: Jugador 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V9 Info", "info", {"🇪🇸 1- Noclip agregado 🇲🇽", "🇪🇸 2- Saltos infinitos agregados 🇲🇽", "🇪🇸 3- Kill Aura mejorado 🇲🇽", "🇪🇸 4 - Organización en la pestaña Arma 🇲🇽"}, function(v)
                    print(v)
                    end)   
@@ -499,8 +517,8 @@ end)
            spawn(function()
            wait(36)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V9 new version 🎉";
-	      Text = "Thanks for the 1.500+ users who use my script 😁";
+           Title = "V10 new version 🎉";
+	      Text = "Thanks for the 2.000+ users who use my script 😁";
            Duration = 25; })
            end)
 
@@ -508,7 +526,6 @@ end)
 task.spawn(function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/raw/main/Alls/01"))()
 end)
-
 
 
 else
@@ -537,7 +554,7 @@ end
 	})
 
 end
---V9
+--V10
 
 end)
            
