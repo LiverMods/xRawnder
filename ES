@@ -126,7 +126,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
  
    local Prison = Window:NewTab("Juego")
     local PrisonSection = Prison:NewSection("Eliminar pared, ...")
-    PrisonSection:NewToggle("Muro", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Para eliminar Muro", "eliminar, se puede restaurar", function(xRawnder)
     if xRawnder then
     L = game.Lighting
 PH = workspace.Prison_Halls
@@ -264,7 +264,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Puertos", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Para eliminar Puertos", "eliminar, se puede restaurar", function(xRawnder)
     if xRawnder then
     game.Workspace.Doors.Parent = game.Lighting
    game.Workspace.Prison_Cellblock.doors.Parent = game.Lighting
@@ -274,7 +274,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Prison Wall", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Para eliminar Prison Wall", "eliminar, se puede restaurar", function(xRawnder)
     if xRawnder then
     game.workspace.Prison_OuterWall.prison_wall.Parent = game.Lighting
     else
@@ -284,7 +284,7 @@ L.Part.Parent = PA
     
     
     
-    PrisonSection:NewToggle("Vallas", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Para eliminar Vallas", "eliminar, se puede restaurar", function(xRawnder)
     if xRawnder then
    game.Workspace.Prison_Fences.Parent = game.Lighting
     else
@@ -292,7 +292,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Torres", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Para eliminar Torres", "eliminar, se puede restaurar", function(xRawnder)
     if xRawnder then
    game.workspace.Prison_OuterWall.prison_wall.Parent = workspace
    game.workspace.Prison_OuterWall.Parent = game.Lighting
@@ -302,6 +302,36 @@ L.Part.Parent = PA
     end
     end)
 
+
+    PrisonSection:NewToggle("Agregue Anti-void", "no muera en el vacío", function(xRawnder)
+    if xRawnder then
+--[ Adicionar o bloco ]
+Part = Instance.new("Part", workspace)
+
+--[ Tamanho e localização ]
+Part.Size = Vector3.new(9999999999999999999999, 6, 999999999999999999999)
+Part.CFrame = CFrame.new(874.69, -430, 2371.31)
+
+--[ Colisão ]
+Part.CanCollide = false
+Part.Anchored = true
+Part.Transparency = 1
+
+--[ FUNÇÃO ]
+Part.Touched:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
+wait(0.2)
+local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
+   hint.Text = "Anti-void executado"
+   hint.Name = game.JobId
+   task.wait(4)
+   hint:Destroy()
+end)
+print("hello" .. plr.Name)
+    else
+    Part:Destroy()
+    end
+    end)
     
             local Gun = Window:NewTab("Arma")
 			local GunSection = Gun:NewSection("Arma")
@@ -613,12 +643,13 @@ Part.Touched:connect(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 wait(0.2)
 local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
-   hint.Text = "Anti-void ejecutado"
+   hint.Text = "Anti-void executado"
    hint.Name = game.JobId
    task.wait(4)
    hint:Destroy()
 end)
 print("hello" .. plr.Name)
+Part:Destroy()
 end
 end)
 
