@@ -134,7 +134,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHub
  
     local Prison = Window:NewTab("Jogo")
     local PrisonSection = Prison:NewSection("Delete Parede, ...")
-    PrisonSection:NewToggle("Parede", "delete, pode ser restaurado", function(xRawnder)
+    PrisonSection:NewToggle("Remover Parede", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
     L = game.Lighting
 PH = workspace.Prison_Halls
@@ -272,7 +272,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Portas", "delete, pode ser restaurado", function(xRawnder)
+    PrisonSection:NewToggle("Remover Portas", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
     game.Workspace.Doors.Parent = game.Lighting
    game.Workspace.Prison_Cellblock.doors.Parent = game.Lighting
@@ -282,7 +282,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Muro Da prisão", "delete, pode ser restaurado", function(xRawnder)
+    PrisonSection:NewToggle("Remover Muro Da prisão", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
     spawn(function()
     game.workspace.Prison_OuterWall.prison_wall.Parent = game.Lighting
@@ -296,7 +296,8 @@ L.Part.Parent = PA
     
     
     
-    PrisonSection:NewToggle("Cercas", "delete, pode ser restaurado", function(xRawnder)
+    
+    PrisonSection:NewToggle("Remover Cercas", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
    game.Workspace.Prison_Fences.Parent = game.Lighting
     else
@@ -304,7 +305,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Torres", "delete, pode ser restaurado", function(xRawnder)
+    PrisonSection:NewToggle("Remover Torres", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
     task.spawn(function()
    game.workspace.Prison_OuterWall.prison_wall.Parent = workspace
@@ -318,7 +319,35 @@ L.Part.Parent = PA
     end
     end)
     
-   
+   PrisonSection:NewToggle("Adicionar Anti-void", "não morra no void", function(xRawnder)
+    if xRawnder then
+--[ Adicionar o bloco ]
+Part = Instance.new("Part", workspace)
+
+--[ Tamanho e localização ]
+Part.Size = Vector3.new(9999999999999999999999, 6, 999999999999999999999)
+Part.CFrame = CFrame.new(874.69, -430, 2371.31)
+
+--[ Colisão ]
+Part.CanCollide = false
+Part.Anchored = true
+Part.Transparency = 1
+
+--[ FUNÇÃO ]
+Part.Touched:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
+wait(0.2)
+local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
+   hint.Text = "Anti-void executado"
+   hint.Name = game.JobId
+   task.wait(4)
+   hint:Destroy()
+end)
+print("hello" .. plr.Name)
+    else
+    Part:Destroy()
+    end
+    end)
     
     
     
@@ -645,6 +674,7 @@ local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
    hint:Destroy()
 end)
 print("hello" .. plr.Name)
+Part:Destroy()
 end
 end)
 
