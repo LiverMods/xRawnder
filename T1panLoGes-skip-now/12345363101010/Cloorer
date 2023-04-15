@@ -239,13 +239,13 @@ playersLabel.Position = UDim2.new(1, -400, 0, 10)
 playersLabel.Size = UDim2.new(0, 100, 0, 30)
 playersLabel.TextScaled = true
 playersLabel.Parent = playersGui
-playersLabel.BackgroundTransparency = 0.45 -- Define a transparência do rótulo
+playersLabel.BackgroundTransparency = 0.5 -- Define a transparência do rótulo
 playersLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Define a cor de fundo do rótulo
 
 -- Função para atualizar a GUI com o número atual de jogadores
 local function updatePlayersCount()
     local playersCount = #game:GetService("Players"):GetPlayers()
-    playersLabel.Text = "Jogadores: " .. playersCount
+    playersLabel.Text = "Players: " .. playersCount
     
     -- Altera a cor do texto com base no número de jogadores
     if playersCount >= 0 and playersCount <= 14 then
