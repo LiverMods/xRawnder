@@ -214,16 +214,19 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.7
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)                 task.wait(7.7)
 
+
 spawn(function()
+task.wait(6)
 --script x-Rawnder
 local message = "[Liver zMods]: x-Rawnder Script, enjoy"
     game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
         Text = message;
-        Color = Color3.fromRGB(15, 255, 190);
+        Color = Color3.fromRGB(25, 255, 190);
         Font = Enum.Font.SourceSans;
         FontSize = Enum.FontSize.Size28;
     })
-    
+end)
+spawn(function()
 
 
 
@@ -239,7 +242,7 @@ playersLabel.Position = UDim2.new(1, -400, 0, 10)
 playersLabel.Size = UDim2.new(0, 100, 0, 30)
 playersLabel.TextScaled = true
 playersLabel.Parent = playersGui
-playersLabel.BackgroundTransparency = 0.5 -- Define a transparência do rótulo
+playersLabel.BackgroundTransparency = 0.4 -- Define a transparência do rótulo
 playersLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- Define a cor de fundo do rótulo
 
 -- Função para atualizar a GUI com o número atual de jogadores
@@ -248,9 +251,9 @@ local function updatePlayersCount()
     playersLabel.Text = "Players: " .. playersCount
     
     -- Altera a cor do texto com base no número de jogadores
-    if playersCount >= 0 and playersCount <= 14 then
+    if playersCount >= 0 and playersCount <= 16 then
         playersLabel.TextColor3 = Color3.new(0, 1, 0) -- Verde
-    elseif playersCount >= 15 and playersCount <= 21 then
+    elseif playersCount >= 17 and playersCount <= 21 then
         playersLabel.TextColor3 = Color3.new(1, 0.6, 0) -- Laranja
     elseif playersCount >= 22 and playersCount <= 24 then
         playersLabel.TextColor3 = Color3.new(1, 0, 0) -- Vermelho
