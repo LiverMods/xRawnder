@@ -2,12 +2,18 @@ local player = game:GetService("Players").LocalPlayer
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V10", "BloodTheme")
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V11", "BloodTheme")
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("bem vindo " .. plr.Name)
 MainSection:NewToggle("Kill Aura", "Mate Tudo ao redor", function(xRawnder)
-        killAura = xRawnder
+    if xRawnder then
+        _G.kill = true
+    else
+        _G.kill = false
+    end
 end)
+
+
 
     MainSection:NewToggle("HITBOX", "Acerte inimigos, HIT BOX", function(xRawnder)
     if xRawnder then
@@ -16,8 +22,11 @@ end)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
     end
 end)
+
+
+
 MainSection:NewButton("Super Soco", "Op", function()
-mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = true local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
+mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = false local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
  end)
  MainSection:NewButton("Clique Para prender ", "Nota: fouciona no celular", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/UZx1y71M", true))()
@@ -648,6 +657,7 @@ end)
 
 --]]
 
+local inf = 9999999999
 
 spawn(function()
 for _ = 1,1 do
@@ -678,53 +688,25 @@ Part:Destroy()
 end
 end)
 
-mainRemotes = game.ReplicatedStorage
-meleeRemote = mainRemotes['meleeEvent']
+coroutine.wrap(function()
+	while wait() do
+		if _G.kill then
+			for i,v in pairs(game.Players:GetPlayers()) do
+				pcall(function()
+					if v ~= game.Players.LocalPlayer then
+						local Distance = (v.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
+						if Distance <= 35 then
+							for i = 1,25 do
+								game.ReplicatedStorage.meleeEvent:FireServer(v)
+							end
+						end
+					end
+				end)
+			end
+		end
+	end
+end)()
 
-spawn(function()
-wait(0.0029288888883333)
-killAura = false
-end)
-
-local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
-   hint.Text = "x-Rawnder loaded"
-   hint.Name = game.JobId
-   task.wait(6)
-   hint:Destroy()
-
-
-function toggleKillAura(actionName, inputState, inputObject)
-if inputState == Enum.UserInputState.Begin then
-if killAura == true then
-killAura = false
-else
-killAura = true
-end
-end
-end
-
-
-while wait() do
-if killAura == true then
-for _, plr in pairs (game:GetService('Players'):GetChildren()) do
-if plr.Name ~= game.Players.LocalPlayer.Name then
-meleeRemote:FireServer(plr)
-end
-end
-end
-end
-
-wait(time)
-
-while wait() do
-if killAura == true then
-for _, plr in pairs (game:GetService('Players'):GetChildren()) do
-if plr.Name ~= game.Players.LocalPlayer.Name then
-meleeRemote:FireServer(plr)
-end
-end
-end
-end
 
 
 -- end functions
