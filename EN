@@ -27,8 +27,11 @@ mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mou
 loadstring(game:HttpGet("https://pastebin.com/raw/UZx1y71M", true))()
 local click = game.Players.LocalPlayer:GetMouse()
 click.Button1Down:connect(function()
+for i = 1, 500, 10 do
 local arrest = click.Target
 local response = game.Workspace.Remote.arrest:InvokeServer(arrest)
+game.Workspace.Remote.arrest:InvokeServer(arrest)
+  end
  end)
 end)
 MainSection:NewButton("HitBox ball V2 ", "cannot be disabled", function()
