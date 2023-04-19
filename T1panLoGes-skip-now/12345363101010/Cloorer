@@ -1,4 +1,24 @@
 spawn(function()
+local function disable()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+end
+
+local function enable()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end
+
+local function speedON()
+for i = 1, 100 do
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 24
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+task.wait(0.05)
+end
+end
+
+
+
 local function progressBar()
 spawn(function()
                -- Executa a função apropriada
@@ -96,8 +116,7 @@ end
 
 spawn(function()
 task.wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+disable()
 task.wait(0.3)
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -23.7
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
@@ -271,28 +290,29 @@ wait(2.5)
 -- Caso contrário, o jogador está em um PC
 
 end
-end) task.wait(4.3)
+end) task.wait(5)
+
 
 
 spawn(function()
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+disable()
+
 wait(0.5)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+
+disable()
+
 wait(0.4)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+
+disable()
 end)                 task.wait(8.2)
 
 spawn(function()
 task.wait(0.3)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+disable()
 task.wait(0.84)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 23.7
-game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+enable()
 end)                 task.wait(7.7)
+speedON()
 
 spawn(function()
 --script x-Rawnder
@@ -492,78 +512,9 @@ end
 		Button2 = '❌' })
 end)
 
-     spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+progressBar()   
 
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Carregar... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)           task.wait(2.5)  
+task.wait(2.5)  
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.pt"))()
            
@@ -607,78 +558,9 @@ end
 		Button2 = '❌' })
 end)
            
-           spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+progressBar()
 
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Loading... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)     task.wait(2.5)
+task.wait(2.5)
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520%2520%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520.obb"))()
           
@@ -725,78 +607,9 @@ game.StarterGui:SetCore('SendNotification', {
 	})
 end)
            
-           spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+progressBar()
 
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Cargando... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)     task.wait(2.5)
+task.wait(2.5)
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/C%26%2320%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520%252520%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520.data"))() 
            
@@ -1001,78 +814,10 @@ end
 end)
 
 xRaSection:NewButton("PC / COMPUTER", "👍🏼", function()
- spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
+progressBar()
 
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Loading... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)     task.wait(2.7)
+task.wait(2.7)
 
 
 if game.PlaceId == 155615604 then
@@ -1155,79 +900,9 @@ end
 		Button1 = '✅',
 		Button2 = '❌' })
 end)
+progressBar()
 
-     spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Carregar... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)           task.wait(2.5)  
+task.wait(2.5)  
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.pt"))()
            
@@ -1271,78 +946,9 @@ end
 		Button2 = '❌' })
 end)
            
-           spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Loading... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)     task.wait(2.5)
+progressBar()          
+           
+task.wait(2.5)
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/20%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520%2520%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%252020%2520%2520%25.name.encript.20%2520*%2520%2520%2520%2520.obb"))()
           
@@ -1389,78 +995,9 @@ game.StarterGui:SetCore('SendNotification', {
 	})
 end)
            
-           spawn(function()
-               -- Executa a função apropriada
-    -- Criando a ScreenGui
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "ProgressBarNotification"
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+progressBar()
 
--- Criando a imagem de fundo
-local BackgroundImage = Instance.new("ImageLabel")
-BackgroundImage.Name = "BackgroundImage"
-BackgroundImage.BackgroundTransparency = 1
-BackgroundImage.Position = UDim2.new(0.5, -250, 0.5, -150)
-BackgroundImage.Size = UDim2.new(0, 500, 0, 300)
-BackgroundImage.Image = "https://www.example.com/background.jpg"
-BackgroundImage.Parent = ScreenGui
-
--- Criando a barra de progresso
-local Frame = Instance.new("Frame")
-Frame.Name = "ProgressFrame"
-Frame.Size = UDim2.new(0, 400, 0, 100)
-Frame.Position = UDim2.new(0.5, -200, 0.5, -50)
-Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Frame.BackgroundTransparency = 0.5
-Frame.BorderSizePixel = 0
-Frame.Parent = ScreenGui
-
--- Criando o texto da barra de progresso
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Name = "ProgressText"
-TextLabel.Size = UDim2.new(1, 0, 0, 50)
-TextLabel.Position = UDim2.new(0, 0, 0.06, 0)
-TextLabel.Text = "Loading..."
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1
-TextLabel.TextScaled = true
-TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Parent = Frame
-
--- Criando a barra de fundo
-local Background = Instance.new("Frame")
-Background.Name = "Background"
-Background.Size = UDim2.new(0.8, 0, 0, 21)
-Background.Position = UDim2.new(0.1, 0, 0.73, -5)
-Background.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-Background.BorderSizePixel = 0
-Background.Parent = Frame
-
--- Criando a barra de progresso real
-local Progress = Instance.new("Frame")
-Progress.Name = "Progress"
-Progress.Size = UDim2.new(0, 0, 1, 0)
-Progress.BackgroundColor3 = Color3.fromRGB(30, 140, 255)
-Progress.BorderSizePixel = 0
-Progress.Parent = Background
-
--- Função para atualizar o progresso da barra
-function updateProgress(percent)
-    Progress:TweenSize(UDim2.new(percent, 0, 1, 0), Enum.EasingDirection.InOut, Enum.EasingStyle.Linear, 0.2, true)
-    TextLabel.Text = string.format("Cargando... %d%%", percent * 100)
-end
-
--- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.75 do
-    updateProgress(i / 100)
- 
-    task.wait()
-end
-wait(2)
-
-ScreenGui:Destroy()
-end)     task.wait(2.5)
+task.wait(2.5)
            
            loadstring(game:HttpGet("https://raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/https%3A/raw.githubusercontent.com/LiverMods/vogankon-txt/main/C%26%2320%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520%252520%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%25252020%252520%252520%2525.name.encript.20%252520*%252520%252520%252520%252520.data"))() 
            
@@ -1607,7 +1144,7 @@ end
 	})
 
 end
---V10
+--V11
 
 end)
 end)
