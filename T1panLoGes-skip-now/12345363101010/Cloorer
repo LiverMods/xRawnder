@@ -197,13 +197,24 @@ function updateProgress(percent)
 end
 
 -- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100 do
+spawn(function()
+for i = 1, 105 do
+wait()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+end
+end)
+
+for i = 1, 100, 1.25 do
     updateProgress(i / 100)
  
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-   game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+    
     task.wait()
 end
+
+
+
+
 wait(2.5)
 ScreenGui:Destroy()
 
@@ -275,14 +286,21 @@ function updateProgress(percent)
 end
 
 -- Exemplo de uso: atualizando a barra de progresso com um loop
-for i = 1, 100, 0.25 do
+spawn(function()
+for i = 1, 105 do
+wait()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+end
+end)
+
+for i = 1, 100, 0.5 do
     updateProgress(i / 100)
     
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = -16
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = -50
+   
     wait(0.00250)
 end
-wait(2.5)
+wait(1.7)
 
 
    ScreenGui:Destroy()
@@ -297,22 +315,22 @@ end) task.wait(5)
 spawn(function()
 disable()
 
-wait(0.5)
+wait(0.04)
 
 disable()
 
-wait(0.4)
+wait(0.05)
 
 disable()
-end)                 task.wait(8.2)
+end)                 task.wait(0.1)
 
 spawn(function()
-task.wait(0.3)
+task.wait(0.08)
 disable()
-task.wait(0.84)
-enable()
-end)                 task.wait(7.7)
+task.wait(1.2)
 speedON()
+end)                 task.wait(3.7)
+
 
 spawn(function()
 --script x-Rawnder
@@ -366,7 +384,7 @@ updatePlayersCount()
 game:GetService("Players").PlayerAdded:Connect(updatePlayersCount)
 game:GetService("Players").PlayerRemoving:Connect(updatePlayersCount)
 
-end) task.wait(0.3)
+end) task.wait(0.05)
 
 local chat = {
     [1] = "Credits: Liver zMods",
