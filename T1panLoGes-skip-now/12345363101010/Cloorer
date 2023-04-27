@@ -414,7 +414,7 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
 
 --[ Nome, Cor ] 
-local Window = Library.CreateLib("{ V11 } { x-Rawnder }", "Midnight")
+local Window = Library.CreateLib("{ V12 } { x-Rawnder }", "Midnight")
 
 
 
@@ -487,7 +487,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 17/04/23")
+                        local CreSection = Cre:NewSection("latest update: 26/04/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -635,6 +635,9 @@ task.wait(2.5)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V12 Info", "info", {"🇵🇹 1- Melhorado 'Super Soco' e agora pode ser desativado e ativado 🇧🇷", "🇵🇹 2- Adicionado 'Remover escudo' 🇧🇷", "🇵🇹 3- Adicionado 'Anti-Crash'  🇧🇷"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V11 Info", "info", {"🇵🇹 1- Kill Aura melhorado, dando 5x mas dano 🇧🇷", "🇵🇹 2- tela de carregamento 🇧🇷", "🇵🇹 3- HitBox otimizado  🇧🇷"}, function(v)
           print(v)
           end)      
@@ -665,6 +668,9 @@ task.wait(2.5)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V12 Info", "info", {"🇺🇲 1- Improved 'Super Punch' and can now be toggled off and on 🇬🇧", "🇺🇲 2- Added 'Remove Shield' 🇬🇧", "🇺🇲 3 - Added 'Anti Crash'  🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V11 Info", "info", {"🇺🇲 1- Improved Kill Aura, dealing 5x more damage 🇬🇧", "🇺🇲 2- loading screen 🇬🇧", "🇺🇲 3 - HitBox optimized  🇬🇧"}, function(v)
           print(v)
           end)      
@@ -696,7 +702,10 @@ task.wait(2.5)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
-                   LocSection:NewDropdown("V11 Info", "info", {"🇪🇸 1- Kill Aura mejorado, que inflige 5 veces más daño 🇲🇽", "🇪🇸 2- cargando pantalla 🇲🇽", "🇪🇸 3- HitBox optimizado  🇲🇽"}, function(v)
+                   LocSection:NewDropdown("V12 Info", "info", {"🇪🇸 1- 'Super Punch' mejorado y ahora se puede activar y desactivar 🇲🇽", "🇪🇸 2- Se agregó 'Eliminar escudo' 🇲🇽", "🇪🇸 3- Se agregó 'Anti Crash' 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
+                   LocSection:NewDropdown("V11 Info", "info", {"🇪🇸 1- Kill Aura mejorado, que inflige 5 veces más daño 🇲🇽", "🇪🇸 2- cargando pantalla 🇲🇽", "🇪🇸 3- HitBox optimizado 🇲🇽"}, function(v)
                    print(v)
                    end)   
                    LocSection:NewDropdown("V10 Info", "info", {"🇪🇸 1- Se agregó Gravedad y + 🇲🇽", "🇪🇸 2- Área agregada: Juego 🇲🇽", "🇪🇸 3- Se eliminó el área de 'bienvenida' 🇲🇽", "🇪🇸 4 - Organización de pestañas: Jugador 🇲🇽"}, function(v)
@@ -794,7 +803,7 @@ spawn(function()
            wait(36)
            game.StarterGui:SetCore("SendNotification", {
            Title = "V11 new version 🎉";
-	      Text = "Thanks for the 2.000+ users who use my script 😁";
+	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
 
@@ -811,8 +820,8 @@ local Sound = Instance.new("Sound",game:GetService("SoundService"))
 Sound.SoundId = "rbxassetid://2323663829"
 Sound:Play()
 
-local speedDesertBindable = Instance.new('BindableFunction')
-function speedDesertBindable.OnInvoke(state)
+local prisonlife = Instance.new('BindableFunction')
+function prisonlife.OnInvoke(state)
 	if state == 'join Prison Life' then
 		teleportService:Teleport(155615604, player )
 
@@ -820,9 +829,10 @@ function speedDesertBindable.OnInvoke(state)
 end
 	game.StarterGui:SetCore('SendNotification', {
 		Title = "Error";
-	        Text = "no support for this game";
+        Text = "no support for this game";
+	    Icon = "rbxthumb://type=Asset&id=811846959&w=150&h=150";
 		Duration = math.huge,
-		Callback = speedDesertBindable,
+		Callback = prisonlife,
 		Button1 = 'join Prison Life',
 		Button2 = '❌'
 	})
@@ -876,7 +886,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 17/04/23")
+                        local CreSection = Cre:NewSection("latest update: 26/04/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -1023,6 +1033,9 @@ task.wait(2.5)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V12 Info", "info", {"🇵🇹 1- Melhorado 'Super Soco' e agora pode ser desativado e ativado 🇧🇷", "🇵🇹 2- Adicionado 'Remover escudo' 🇧🇷", "🇵🇹 3- Adicionado 'Anti-Crash'  🇧🇷"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V11 Info", "info", {"🇵🇹 1- Kill Aura melhorado, dando 5x mas dano 🇧🇷", "🇵🇹 2- tela de carregamento 🇧🇷", "🇵🇹 3- HitBox otimizado  🇧🇷"}, function(v)
           print(v)
           end)      
@@ -1053,6 +1066,9 @@ task.wait(2.5)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V12 Info", "info", {"🇺🇲 1- Improved 'Super Punch' and can now be toggled off and on 🇬🇧", "🇺🇲 2- Added 'Remove Shield' 🇬🇧", "🇺🇲 3 - Added 'Anti Crash'  🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V11 Info", "info", {"🇺🇲 1- Improved Kill Aura, dealing 5x more damage 🇬🇧", "🇺🇲 2- loading screen 🇬🇧", "🇺🇲 3 - HitBox optimized  🇬🇧"}, function(v)
           print(v)
           end)      
@@ -1084,7 +1100,10 @@ task.wait(2.5)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
-                   LocSection:NewDropdown("V11 Info", "info", {"🇪🇸 1- Kill Aura mejorado, que inflige 5 veces más daño 🇲🇽", "🇪🇸 2- cargando pantalla 🇲🇽", "🇪🇸 3- HitBox optimizado  🇲🇽"}, function(v)
+                   LocSection:NewDropdown("V12 Info", "info", {"🇪🇸 1- 'Super Punch' mejorado y ahora se puede activar y desactivar 🇲🇽", "🇪🇸 2- Se agregó 'Eliminar escudo' 🇲🇽", "🇪🇸 3- Se agregó 'Anti Crash' 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
+                   LocSection:NewDropdown("V11 Info", "info", {"🇪🇸 1- Kill Aura mejorado, que inflige 5 veces más daño 🇲🇽", "🇪🇸 2- cargando pantalla 🇲🇽", "🇪🇸 3- HitBox optimizado 🇲🇽"}, function(v)
                    print(v)
                    end)   
                    LocSection:NewDropdown("V10 Info", "info", {"🇪🇸 1- Se agregó Gravedad y + 🇲🇽", "🇪🇸 2- Área agregada: Juego 🇲🇽", "🇪🇸 3- Se eliminó el área de 'bienvenida' 🇲🇽", "🇪🇸 4 - Organización de pestañas: Jugador 🇲🇽"}, function(v)
@@ -1126,7 +1145,7 @@ end)
            wait(36)
 game.StarterGui:SetCore("SendNotification", {
            Title = "V10 new version 🎉";
-	      Text = "Thanks for the 2.000+ users who use my script 😁";
+	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
 
@@ -1145,8 +1164,8 @@ local Sound = Instance.new("Sound",game:GetService("SoundService"))
 Sound.SoundId = "rbxassetid://2323663829"
 Sound:Play()
 
-local speedDesertBindable = Instance.new('BindableFunction')
-function speedDesertBindable.OnInvoke(state)
+local prisonlife = Instance.new('BindableFunction')
+function prisonlife.OnInvoke(state)
 	if state == 'join Prison Life' then
 		teleportService:Teleport(155615604, player )
 
@@ -1154,15 +1173,16 @@ function speedDesertBindable.OnInvoke(state)
 end
 	game.StarterGui:SetCore('SendNotification', {
 		Title = "Error";
-	        Text = "no support for this game";
+        Text = "no support for this game";
+	    Icon = "rbxthumb://type=Asset&id=811846959&w=150&h=150";
 		Duration = math.huge,
-		Callback = speedDesertBindable,
+		Callback = prisonlife,
 		Button1 = 'join Prison Life',
 		Button2 = '❌'
 	})
 
 end
---V11
+--V12
 
 end)
 end)
