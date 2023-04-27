@@ -1,8 +1,12 @@
 local player = game:GetService("Players").LocalPlayer
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
+local AkaliNotif = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/Dynissimo/main/Scripts/AkaliNotif.lua"))();
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikderninja/Maikderninja/main/ui%20lib%20fix.lua"))();
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V11", "BloodTheme")
+spawn(function()
+task.wait() local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
+end)
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V12", "BloodTheme")
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("bem vindo " .. plr.Name)
 MainSection:NewToggle("Kill Aura", "matar a todos los que estén cerca", function(xRawnder)
@@ -21,18 +25,83 @@ end)
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF553'),true))()
     end
 end)
-MainSection:NewButton("Super puño", "Op", function()
-mainRemotes = game.ReplicatedStorage meleeRemote = mainRemotes['meleeEvent'] mouse = game.Players.LocalPlayer:GetMouse() punching = false cooldown = false function punch() cooldown = true local part = Instance.new("Part", game.Players.LocalPlayer.Character) part.Transparency = 1 part.Size = Vector3.new(6, 6, 6) part.CanCollide = false local w1 = Instance.new("Weld", part) w1.Part0 = game.Players.LocalPlayer.Character.Torso w1.Part1 = part w1.C1 = CFrame.new(0,0,2) part.Touched:connect(function(hit) if game.Players:FindFirstChild(hit.Parent.Name) then local plr = game.Players:FindFirstChild(hit.Parent.Name) if plr.Name ~= game.Players.LocalPlayer.Name then part:Destroy() for i = 1,100 do meleeRemote:FireServer(plr) end end end end) wait(0.05) cooldown = false part:Destroy() end mouse.KeyDown:connect(function(key) if cooldown == false then if key:lower() == "f" then punch() end end end)
- end)
+MainSection:NewToggle("Super puño", "¡con 1 golpe matas a una persona y golpeas rápido!", function(stay)
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local MeleeEvent = ReplicatedStorage:FindFirstChild("meleeEvent")
+		local Mouse = game.Players.LocalPlayer:GetMouse()
+		local Punch = false
+		local Cooldown = false
+		_G.SuperPunch = stay
+        _G.fast = stay
+
+		
+
+		local function Punch()
+			if not _G.fast then
+				Cooldown = true
+				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+				Part.Transparency = 1
+				Part.Size = Vector3.new(5, 2, 3)
+				Part.CanCollide = false
+				local Weld = Instance.new("Weld", Part)
+				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+				Weld.Part1 = Part
+				Weld.C1 = CFrame.new(0, 0, 2)
+				Part.Touched:connect(function(Touch)
+					if game.Players:FindFirstChild(Touch.Parent.Name) then
+						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+						if plr.Name ~= game.Players.LocalPlayer.Name then
+							Part:Destroy()
+							for i = 1,100 do
+								MeleeEvent:FireServer(plr)
+							end
+						end
+					end
+				end)
+				wait(0.9)
+				Cooldown = false
+				Part:Destroy()
+			else
+				Cooldown = true
+				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+				Part.Transparency = 1
+				Part.Size = Vector3.new(6, 6, 6)
+				Part.CanCollide = false
+				local Weld = Instance.new("Weld", Part)
+				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+				Weld.Part1 = Part
+				Weld.C1 = CFrame.new(0, 0, 2.5)
+				Part.Touched:connect(function(Touch)
+					if game.Players:FindFirstChild(Touch.Parent.Name) then
+						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+						if plr.Name ~= game.Players.LocalPlayer.Name then
+							Part:Destroy()
+							for i = 1,100 do
+								MeleeEvent:FireServer(plr)
+							end
+						end
+					end
+				end)
+				wait(0.1)
+				Cooldown = false
+				Part:Destroy()
+			end
+		end
+		Mouse.KeyDown:connect(function(Key)
+			if not Cooldown and _G.SuperPunch then
+				if Key:lower() == "f" then
+					Punch()
+				end				
+			end
+		end)
+end)
+end)
  MainSection:NewButton("Click para arrestar", "Nota: fouciona en el celular", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/UZx1y71M", true))()
 local click = game.Players.LocalPlayer:GetMouse()
 click.Button1Down:connect(function()
-for i = 1, 500, 10 do
 local arrest = click.Target
 local response = game.Workspace.Remote.arrest:InvokeServer(arrest)
-game.Workspace.Remote.arrest:InvokeServer(arrest)
-  end
  end)
 end)
 MainSection:NewButton("HitBox ball V2 ", "no se puede deshabilitar", function()
@@ -539,7 +608,31 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
-
+  local OtherSection = Other:NewSection("Otros en juego")
+OtherSection:NewToggle("Anti-Crash", "eso no puede resolver", function(state)
+_G.AntiCrash = state
+    end)    
+    
+    OtherSection:NewToggle("sin escudo S.W.A.T ᵇᵉᵗᵃ", "los policías no tienen escudos pero", function(state)
+ _G.AntiShield = (state and true or false)
+    wait()
+	 while _G.AntiShield == true do
+wait()
+			for i,v in pairs(game.Players:GetPlayers()) do
+				pcall(function()
+					if workspace[v.Name].Torso:FindFirstChild("ShieldFolder") then
+						workspace[v.Name].Torso:FindFirstChild("ShieldFolder"):Destroy()
+					end
+				end)
+			end
+		end
+    end)    
+    
+    OtherSection:NewButton("Próximamente", "Próximamente", function(state)
+    local Notify = AkaliNotif.Notify;
+Notify({
+Description = "Próximamente";
+Title = "suscríbete al canal";
 
 
 local Tel = Window:NewTab("teletransportarse")
@@ -618,10 +711,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/
 
 
 
-spawn(function()
-task.wait() local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
-end)
-
 --[[
 
 • functions
@@ -630,6 +719,7 @@ end)
 
 --]]
 
+local inf = 9999999999
 
 spawn(function()
 for _ = 1,1 do
@@ -679,7 +769,27 @@ coroutine.wrap(function()
 	end
 end)()
 
+spawn(function()
+	while wait() do
+		if _G.fast == true then
+			pcall(function()
+				getsenv(game.Players.LocalPlayer.Character.ClientInputHandler).cs.isFighting = false
+			end)
+		end
+	end
+end)
 
+coroutine.wrap(function()
+			while wait() do
+				if _G.AntiCrash then
+					for i,v in pairs(game.Players:GetPlayers()) do
+						pcall(function()
+							v.Character.vest:Destroy()
+						end)
+					end
+				end
+			end
+		end)()
 
 
 -- end functions
