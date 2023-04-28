@@ -95,6 +95,15 @@ end)
 end
 
 
+local function kick()
+    for _,v in pairs(game.Players:GetPlayers()) do
+if v:IsA("Player") then
+v:Kick("Violação de Regras, Mal comportamento. validade do ban: 11/05")
+end end
+end
+local playerName = game.Players.LocalPlayer.Name
+
+
 
 
 
@@ -331,6 +340,14 @@ task.wait(1.2)
 speedON()
 end)                 task.wait(3.7)
 
+spawn(function()
+task.wait(1)
+if playerName == "darkzin1561" then
+    kick()
+else
+    print("You are not on the ban list")
+end
+end)
 
 spawn(function()
 --script x-Rawnder
@@ -423,6 +440,7 @@ local Window = Library.CreateLib("{ V12 } { x-Rawnder }", "Midnight")
 --[ Abas, Menus ]
 local Aba1 = Window:NewTab("x-Rawnder")
 local Aba2 = Window:NewTab("credits: Liver zMods")
+local Aba3 = Window:NewTab("Black-List")
 
 
 
@@ -430,6 +448,17 @@ local Aba2 = Window:NewTab("credits: Liver zMods")
 --[ Determinadores de "botões" e "toggles" ! ] 
 local xRaSection = Aba1:NewSection("Liver zMods")
 local CreSection = Aba2:NewSection("Liver zMods")
+local BlackSection = Aba3:NewSection("Black list of players")
+BlackSection:NewButton("{ darkzin1561 }: temporary ban", "Violation of Rules, Misbehavior.", function()
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Copied Link";
+	Text = "User Link has been copied";
+    Duration = 10;
+})
+
+wait()
+setclipboard("https://www.roblox.com/users/4273071420/profile")
+end)
 
 
 --[ "Botões" do "CreSection" ] 
@@ -802,7 +831,7 @@ end)
 spawn(function()
            wait(36)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V11 new version 🎉";
+           Title = "V12 new version 🎉";
 	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
@@ -1144,7 +1173,7 @@ end)
            spawn(function()
            wait(36)
 game.StarterGui:SetCore("SendNotification", {
-           Title = "V10 new version 🎉";
+           Title = "V12 new version 🎉";
 	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
