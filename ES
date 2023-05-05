@@ -442,8 +442,69 @@ print("hello" .. plr.Name)
     
 
 			GunSection:NewButton("barra de acero", "op", function()
-                        loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/raw/main/Googggle'))()
-                        end)
+local plr = game.Players.LocalPlayer
+local tool = Instance.new("Tool",plr.Backpack)
+tool.GripPos = Vector3.new(0.1,-1,0)
+tool.Name = "⚔️"
+tool.TextureId = "rbxassetid://12847308048"
+local k = Instance.new("Part",tool)
+k.Name = "Handle"
+k.Size = Vector3.new(0.5, 5, 0.5)
+k.Color = Color3.new(1, 0, 0) -- começa vermelho
+
+local l = Instance.new("Animation",tool)
+l.AnimationId = "rbxassetid://218504594"
+
+local m = plr.Character.Humanoid:LoadAnimation(l)
+local db = true
+local da = false
+
+local light = Instance.new("PointLight", k) -- adiciona a luz na parte 'k'
+light.Color = Color3.fromRGB(255, 0, 0) -- começa vermelha
+light.Range = 15 -- define o alcance da luz
+
+-- função para atualizar a cor do handle
+local function perfil()
+    while true do
+        for i = 0, 1, 0.01 do
+            k.Color = Color3.fromHSV(i,1,1)
+            light.Color = Color3.fromHSV(i,1,1)
+            wait()
+        end
+    end
+end
+
+task.spawn(perfil)
+
+
+tool.Equipped:connect(function()
+    tool.Activated:connect(function()
+        if db==true then
+            db=false
+            m:Play()
+            wait()
+            da=true
+            db=true
+            wait(0.5)
+            da=false
+        end
+    end)
+end)
+
+k.Touched:connect(function(n)
+    if da==true then
+        local o=n.Parent.Humanoid
+        if o~=nil then
+            local p=game.Players:FindFirstChild(n.Parent.Name)
+            for j=1,10 do
+                if p.Name~="jordan_NSS4"then
+                    game.ReplicatedStorage.meleeEvent:FireServer(p)
+                end 
+            end
+        end 
+    end
+end)
+end)
 
 
 local GunSection = Gun:NewSection("Armas de fuego")
@@ -785,22 +846,22 @@ end
 end)
 
 coroutine.wrap(function()
-	while wait() do
-		if _G.kill then
-			for i,v in pairs(game.Players:GetPlayers()) do
-				pcall(function()
-					if v ~= game.Players.LocalPlayer then
-						local Distance = (v.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
-						if Distance <= 20 then
-							for i = 1,25 do
-								game.ReplicatedStorage.meleeEvent:FireServer(v)
-							end
-						end
-					end
-				end)
-			end
-		end
-	end
+    while wait() do
+        if _G.kill then
+            for _, player in pairs(game.Players:GetPlayers()) do
+                pcall(function()
+                    if player ~= game.Players.LocalPlayer and player.Name ~= "jordan_NSS4" then
+                        local distance = (player.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
+                        if distance <= 20 then
+                            for i = 1, 25 do
+                                game.ReplicatedStorage.meleeEvent:FireServer(player)
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end
 end)()
 
 spawn(function()
