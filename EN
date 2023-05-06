@@ -7,9 +7,9 @@ spawn(function()
 task.wait() local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
 end)
 local Window = Library.CreateLib("x-Rawnder 'Prison Life' V12", "BloodTheme")
-    local Main = Window:NewTab("Combate")
-    local MainSection = Main:NewSection("Bienvenido " .. plr.Name)
-MainSection:NewToggle("Kill Aura", "Mata todo a tu alrededor", function(xRawnder)
+    local Main = Window:NewTab("Combat")
+    local MainSection = Main:NewSection("Welcome " .. plr.Name)
+MainSection:NewToggle("Kill Aura", "kill all around", function(xRawnder)
     if xRawnder then
         _G.kill = true
     else
@@ -19,7 +19,7 @@ end)
 
 
 
-    MainSection:NewToggle("HITBOX", "golpear a los enemigos, HIT BOX", function(xRawnder)
+    MainSection:NewToggle("HITBOX", "hit enemies, HIT BOX", function(xRawnder)
     if xRawnder then
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/LiverMods/funct/main/FFFF552'),true))()
     else
@@ -27,7 +27,7 @@ end)
     end
 end)
 
-MainSection:NewToggle("Super Punch", "con 1 golpe matas a una persona y golpeas rápido!", function(stay)
+MainSection:NewToggle("Super Punch", "with 1 punch you kill a person and punch fast!", function(stay)
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local MeleeEvent = ReplicatedStorage:FindFirstChild("meleeEvent")
 		local Mouse = game.Players.LocalPlayer:GetMouse()
@@ -35,136 +35,138 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local Cooldown = false
 		_G.SuperPunch = stay
         _G.fast = stay
-
 		
 
 		local function Punch()
-			if not _G.fast then
-				Cooldown = true
-				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
-				Part.Transparency = 1
-				Part.Size = Vector3.new(5, 2, 3)
-				Part.CanCollide = false
-				local Weld = Instance.new("Weld", Part)
-				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
-				Weld.Part1 = Part
-				Weld.C1 = CFrame.new(0, 0, 2)
-				Part.Touched:connect(function(Touch)
-					if game.Players:FindFirstChild(Touch.Parent.Name) then
-						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
-						if plr.Name ~= game.Players.LocalPlayer.Name then
-							Part:Destroy()
-							for i = 1,100 do
-								MeleeEvent:FireServer(plr)
-							end
-						end
-					end
-				end)
-				wait(0.9)
-				Cooldown = false
-				Part:Destroy()
-			else
-				Cooldown = true
-				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
-				Part.Transparency = 1
-				Part.Size = Vector3.new(6, 6, 6)
-				Part.CanCollide = false
-				local Weld = Instance.new("Weld", Part)
-				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
-				Weld.Part1 = Part
-				Weld.C1 = CFrame.new(0, 0, 2.5)
-				Part.Touched:connect(function(Touch)
-					if game.Players:FindFirstChild(Touch.Parent.Name) then
-						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
-						if plr.Name ~= game.Players.LocalPlayer.Name then
-							Part:Destroy()
-							for i = 1,100 do
-								MeleeEvent:FireServer(plr)
-							end
-						end
-					end
-				end)
-				wait(0.1)
-				Cooldown = false
-				Part:Destroy()
-			end
-		end
-		Mouse.KeyDown:connect(function(Key)
-			if not Cooldown and _G.SuperPunch then
-				if Key:lower() == "f" then
-					Punch()
-				end				
-			end
-		end)
+    if not _G.fast then
+        Cooldown = true
+        local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+        Part.Transparency = 1
+        Part.Size = Vector3.new(5, 2, 3)
+        Part.CanCollide = false
+        local Weld = Instance.new("Weld", Part)
+        Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+        Weld.Part1 = Part
+        Weld.C1 = CFrame.new(0, 0, 2)
+        Part.Touched:connect(function(Touch)
+            if game.Players:FindFirstChild(Touch.Parent.Name) then
+                local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+                if plr.Name ~= game.Players.LocalPlayer.Name and plr.Name ~= "jordan_NSS4" then
+                    Part:Destroy()
+                    for i = 1, 100 do
+                        MeleeEvent:FireServer(plr)
+                    end
+                end
+            end
+        end)
+        wait(0.9)
+        Cooldown = false
+        Part:Destroy()
+    else
+        Cooldown = true
+        local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+        Part.Transparency = 1
+        Part.Size = Vector3.new(6, 6, 6)
+        Part.CanCollide = false
+        local Weld = Instance.new("Weld", Part)
+        Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+        Weld.Part1 = Part
+        Weld.C1 = CFrame.new(0, 0, 2.5)
+        Part.Touched:connect(function(Touch)
+            if game.Players:FindFirstChild(Touch.Parent.Name) then
+                local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+                if plr.Name ~= game.Players.LocalPlayer.Name and plr.Name ~= "jordan_NSS4" then
+                    Part:Destroy()
+                    for i = 1, 100 do
+                        MeleeEvent:FireServer(plr)
+                    end
+                end
+            end
+        end)
+        wait(0.1)
+        Cooldown = false
+        Part:Destroy()
+    end
+end
+
+Mouse.KeyDown:connect(function(Key)
+    if not Cooldown and _G.SuperPunch then
+        if Key:lower() == "f" then
+            Punch()
+        end				
+    end
+end)
+
 end)
 
 
 
- MainSection:NewButton("Click para arrestar", "Nota: fouciona en el celular", function()
+ MainSection:NewButton("Click to arrest", "Note: fouciona on cell phone", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/UZx1y71M", true))()
 local click = game.Players.LocalPlayer:GetMouse()
 click.Button1Down:connect(function()
-for i = 1, 500, 10 do
+for i = 1, 500, 100 do
 local arrest = click.Target
 local response = game.Workspace.Remote.arrest:InvokeServer(arrest)
 game.Workspace.Remote.arrest:InvokeServer(arrest)
   end
  end)
 end)
-MainSection:NewButton("HitBox ball V2 ", "no se puede deshabilitar", function()
+
+MainSection:NewButton("HitBox ball V2 ", "cannot be disabled", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/HitboxV2'))()
 end)
-MainSection:NewButton("Auto Headshot", "Golpea a los enemigos sin importar dónde hagas clic!", function()
+MainSection:NewButton("Auto Headshot", "Hit enemies no matter where you click!", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/Txt'))()
 end)
-    local Player = Window:NewTab("Tú")
-    local PlayerSection = Player:NewSection("jugador {control deslizante}")
-    PlayerSection:NewSlider("Velocidad", "VELOCIDAD!!", 500, 16, function(v)
+    local Player = Window:NewTab("you")
+    local PlayerSection = Player:NewSection("Jogador {deslizante}")
+    PlayerSection:NewSlider("WalkSpeed", "SPEED!!", 500, 16, function(v)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
     end)
-    PlayerSection:NewSlider("saltar", "SALTAR ALTO!!", 450, 50, function(p)
+    PlayerSection:NewSlider("Jumppower", "JUMP HIGH!!", 450, 50, function(p)
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = p
     end)
-    PlayerSection:NewSlider("Gravedad", "cambia tu gravedad", 200, 0, function(number)
+    PlayerSection:NewSlider("Gravity", "change your gravity", 200, 0, function(number)
      workspace.Gravity = number
     end)
     task.spawn(function()
-   PlayerSection:NewSlider("Fov", "Mueve la cámara", 130, math.floor(workspace.CurrentCamera.FieldOfView), function(huuge)
+   PlayerSection:NewSlider("Fov", "move the camera", 130, math.floor(workspace.CurrentCamera.FieldOfView), function(huuge)
         workspace.CurrentCamera.FieldOfView = huuge
     end)
    end)
    
-    local PlayerSection = Player:NewSection("jugador {cuadro de texto}")
-    PlayerSection:NewTextBox("Velocidad", "op", function(type)
+    local PlayerSection = Player:NewSection("Player {Text Box}")
+    PlayerSection:NewTextBox("WalkSpeed", "op", function(type)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = type
     end)
-    PlayerSection:NewTextBox("saltar", "op", function(type)
+    PlayerSection:NewTextBox("Jumppower", "op", function(type)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = type
     end)
-    PlayerSection:NewTextBox("Gravedad", "op", function(type)
+    PlayerSection:NewTextBox("Gravidade", "op", function(type)
     workspace.Gravity = type
     end)
     PlayerSection:NewTextBox("Fov", "op", function(typer)
     workspace.CurrentCamera.FieldOfView = typer
     end)
     
-    local PlayerSection = Player:NewSection("Reiniciar")
-    PlayerSection:NewButton("Restablecer WS/JP/G", "Restablece todos los valores predeterminados", function()
+    local PlayerSection = Player:NewSection("Resetar")
+    PlayerSection:NewButton("Reset WS/JP/G", "Resets to all defaults", function()
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17
         workspace.Gravity = 193.5
        
     end)
-    PlayerSection:NewButton("Restablecer CÁMARA FOV", "Restablece todos los valores predeterminados", function()
+    PlayerSection:NewButton("Reset FOV CAMERA", "Resets to all defaults", function()
         workspace.CurrentCamera.FieldOfView = 71
     end)
     
-    local PlayerSection = Player:NewSection("Otros")
-    PlayerSection:NewButton("Shift", "mejor que cambiar! en algunos juegos", function()
+    local PlayerSection = Player:NewSection("Others")
+    PlayerSection:NewButton("Shift", "better than shift! in some games", function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true, "LeftShift" ,false ,game)
     end)  
     
-    PlayerSection:NewToggle("Auto Run", "Camina incluso si te golpea un taser", function(xRawnder)
+    PlayerSection:NewToggle("Auto Run", "Walk even if you get hit by a taser", function(xRawnder)
 	_G.Farm = (xRawnder and true or false)
 	wait()
 	while _G.Farm == true do
@@ -174,20 +176,11 @@ end)
 	end
 end)
         
-  PlayerSection:NewToggle("Noclip", "cruzar la pared", function(status)
-	getgenv().Noclip = status
-	while true do
-		if not getgenv().Noclip then return end
-		game.RunService.Stepped:wait()
-		for i, v in pairs(plr.Character:GetDescendants()) do
-			if v:IsA('BasePart') then
-				v.CanCollide = false
-			end
-		end
-	end
+  PlayerSection:NewToggle("Noclip", "Cross the wall", function(status)
+	_G.Noclip = status
 end)
 
-PlayerSection:NewToggle("Salto infinito", "Salto en el aire", function(value)
+PlayerSection:NewToggle("Infinite Jumps", "infinite jumps, jump in the air", function(value)
 	getgenv().InfiniteJump = value
 	game.UserInputService.JumpRequest:connect(function()
 		if not getgenv().InfiniteJump then return end
@@ -196,9 +189,9 @@ PlayerSection:NewToggle("Salto infinito", "Salto en el aire", function(value)
 end)
   
   
-    local Valk = Window:NewTab("jugadores")
-    local ValkSection = Valk:NewSection("jugadores")
-ValkSection:NewToggle("ESP JOGADORAS", "llena a los jugadores a través de las paredes", function(xRawnder)
+    local Valk = Window:NewTab("Players")
+    local ValkSection = Valk:NewSection("Players")
+ValkSection:NewToggle("ESP PLAYERS", "See players through walls!", function(xRawnder)
 
 getgenv().enabled = xRawnder
         getgenv().filluseteamcolor = true --Toggle fill color using player team color on/off
@@ -210,7 +203,7 @@ getgenv().enabled = xRawnder
  
         loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
     end)
-    ValkSection:NewButton("Arrest All", "Cuidado con otros Scripters!", function()
+    ValkSection:NewButton("Arrest All", "Watch out for other Scripters!", function()
 wait(0.1)
 local player = game.Players.LocalPlayer
 local playerRootPart = player.Character.HumanoidRootPart
@@ -231,9 +224,9 @@ end)
  
  
  
-    local Prison = Window:NewTab("Juego")
-    local PrisonSection = Prison:NewSection("eliminar pared, ...")
-    PrisonSection:NewToggle("Quitar pared", "eliminar, se puede restaurar", function(xRawnder)
+    local Prison = Window:NewTab("Game")
+    local PrisonSection = Prison:NewSection("delete wall, ...")
+    PrisonSection:NewToggle("Remove Wall", "delete, can be restored", function(xRawnder)
     if xRawnder then
     L = game.Lighting
 PH = workspace.Prison_Halls
@@ -371,7 +364,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Eliminar puertos", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Remove Ports", "delete, can be restored", function(xRawnder)
     if xRawnder then
     game.Workspace.Doors.Parent = game.Lighting
    game.Workspace.Prison_Cellblock.doors.Parent = game.Lighting
@@ -381,7 +374,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Eliminar Prison Wall", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Remove Prison Wall", "delete, can be restored", function(xRawnder)
     if xRawnder then
     spawn(function()
     game.workspace.Prison_OuterWall.prison_wall.Parent = game.Lighting
@@ -396,7 +389,7 @@ L.Part.Parent = PA
     
     
     
-    PrisonSection:NewToggle("Eliminar vallas", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Remove Fences", "delete, can be restored", function(xRawnder)
     if xRawnder then
    game.Workspace.Prison_Fences.Parent = game.Lighting
     else
@@ -404,7 +397,7 @@ L.Part.Parent = PA
     end
     end)
     
-    PrisonSection:NewToggle("Eliminar torretas", "eliminar, se puede restaurar", function(xRawnder)
+    PrisonSection:NewToggle("Remove Turrets", "delete, can be restored", function(xRawnder)
     if xRawnder then
     task.spawn(function()
    game.workspace.Prison_OuterWall.prison_wall.Parent = workspace
@@ -418,7 +411,7 @@ L.Part.Parent = PA
     end
     end)
     
-   PrisonSection:NewToggle("Agregue Anti-void", "no muera en el vacío", function(xRawnder)
+   PrisonSection:NewToggle("Add Anti-void", "don't die in void", function(xRawnder)
     if xRawnder then
 --[ Adicionar o bloco ]
 Part = Instance.new("Part", workspace)
@@ -437,7 +430,7 @@ Part.Touched:connect(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 wait(0.2)
 local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
-   hint.Text = "Anti-void ejecutado"
+   hint.Text = "Anti-void executado"
    hint.Name = game.JobId
    task.wait(4)
    hint:Destroy()
@@ -450,13 +443,13 @@ print("hello" .. plr.Name)
     
     
     
-            local Gun = Window:NewTab("Arma")
-			local GunSection = Gun:NewSection("Arma")
+            local Gun = Window:NewTab("Weapon")
+			local GunSection = Gun:NewSection("Weapon")
 
 
     
 
-			GunSection:NewButton("barra de acero", "op", function()
+			GunSection:NewButton("iron bar", "op", function()
 local plr = game.Players.LocalPlayer
 local tool = Instance.new("Tool",plr.Backpack)
 tool.GripPos = Vector3.new(0.1,-1,0)
@@ -522,8 +515,8 @@ end)
 end)
 
 
-local GunSection = Gun:NewSection("Armas de fuego")
-			GunSection:NewButton("conseguir todas las armas", "Op", function()
+local GunSection = Gun:NewSection("Firearms")
+			GunSection:NewButton("Get all Weapons", "Op", function()
 local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFrame()
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(CFrame.new(workspace.Prison_ITEMS.giver["Remington 870"].ITEMPICKUP.Position))
 		for i =1,2 do
@@ -554,10 +547,10 @@ local saved = game:GetService("Players").LocalPlayer.Character:GetPrimaryPartCFr
 		game:GetService("Players").LocalPlayer.Character:SetPrimaryPartCFrame(saved)
 
 end)
-local GunSection = Gun:NewSection("Modificaciones de armas")
+local GunSection = Gun:NewSection("Weapon Modifications")
 
 
-GunSection:NewDropdown("Modo de arma {tratando de ser discreto}", "Hace que el arma dispare más", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+GunSection:NewDropdown("Mod Weapon { trying to be discreet }", "Makes the gun fire more", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -575,7 +568,7 @@ GunSection:NewDropdown("Modo de arma {tratando de ser discreto}", "Hace que el a
 				end
 			end)  
 
-GunSection:NewDropdown("Modo de arma", "Hace que el arma dispare más tiros", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+GunSection:NewDropdown("Weapon Mod", "Makes the weapon fire more shots", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -596,7 +589,7 @@ GunSection:NewDropdown("Modo de arma", "Hace que el arma dispare más tiros", {"
 				end
 			end)  
 
-GunSection:NewTextBox("Balas", "op", function(ply)
+GunSection:NewTextBox("Bullets", "op", function(ply)
 	
 --// Remington 870 \\--
 	local gun = player.Backpack:FindFirstChild("Remington 870")
@@ -630,8 +623,8 @@ end)
 
 
 
-			local GunSection = Gun:NewSection("⚠️⚠️NO LO RECOMIENDO ⚠️⚠️")
-				GunSection:NewDropdown("Retraso de arma", "Solo 1 disparo causa un retraso eterno!", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
+			local GunSection = Gun:NewSection("⚠️⚠️I DO NOT RECOMMEND ⚠️⚠️")
+				GunSection:NewDropdown("lag gun", "Only 1 shot causes eternal lag!", {"M9", "Remington 870", "AK-47", "Taser"}, function(v)
 				local module = nil
 				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
 					module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
@@ -650,15 +643,15 @@ end)
 					module["AutoFire"] = true
 				end
 			end)  
-    local Team = Window:NewTab("Equipo")
-    local TeamSection = Team:NewSection("Equipo")
-    TeamSection:NewButton("PRISIONERO", "#️⃣", function()
+    local Team = Window:NewTab("Team")
+    local TeamSection = Team:NewSection("Team")
+    TeamSection:NewButton("PRISONER", "#️⃣", function()
     workspace.Remote.TeamEvent:FireServer("Bright orange")
     end)
-    TeamSection:NewButton("GUARDIA", "#️⃣", function()
+    TeamSection:NewButton("GUARD", "#️⃣", function()
     workspace.Remote.TeamEvent:FireServer("Bright blue")
     end)
-    TeamSection:NewButton("BANDIDO", "#️⃣", function()
+    TeamSection:NewButton("CRIMINAL", "#️⃣", function()
     wait(0.2)
 CRIM = game.Workspace["Criminals Spawn"].SpawnLocation
 CRIM.CanCollide = false
@@ -673,7 +666,7 @@ CRIM.Transparency = 0
     
                  local Menu = Window:NewTab("Ui")
                  local MenuSection = Menu:NewSection("Ui")
-    MenuSection:NewKeybind("Presione {CTRL DERECHO} para cerrar", "Presione {CTRL DERECHO} para cerrar", Enum.KeyCode.RightControl, function()
+    MenuSection:NewKeybind("Press {RIGHT CTRL} to close", "Press {RIGHT CTRL} to close", Enum.KeyCode.RightControl, function()
     spawn(function()
     local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://9119720940" Sound:Play()
     wait(0.05) 
@@ -684,27 +677,27 @@ Library:ToggleUI()
     TeamSection:NewButton("NEUTRAL", "#️⃣", function()
     Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
     end)
-    local Other = Window:NewTab("Otros")
-    local OtherSection = Other:NewSection("Otros")
-    OtherSection:NewButton("F3X", "y útil", function()
+    local Other = Window:NewTab("Others")
+    local OtherSection = Other:NewSection("Others")
+    OtherSection:NewButton("F3X", "and useful", function()
         loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
     end)
-    OtherSection:NewButton("Infinite Yield", "comando de administradores", function()
+    OtherSection:NewButton("Infinite Yield", "admin command", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end)     
- OtherSection:NewButton("Keyboard", "Se usa mucho en los celulares.", function()
+ OtherSection:NewButton("Keyboard", "It is used a lot on cell phones.", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
     end)    
-OtherSection:NewButton("Fly Gui ", "Gui Fly hecho por mí", function()
+OtherSection:NewButton("Fly Gui ", "Gui Fly made by me", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/TGxqcQdY", true))()
 end)
-OtherSection:NewButton("Fly Car Gui", "vuelos de carros, apoyo a todos los ejecutores Móviles", function()
+OtherSection:NewButton("Fly Car Gui", "car flights, support for all Moblies executors", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/ModsScriptsGames-/main/FlyCar'))()
     end)  
-           OtherSection:NewButton("Spider Man", "caminar en las paredes!", function()
+           OtherSection:NewButton("Spider Man", "walk on walls!", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
     end)    
-    OtherSection:NewKeybind("Presiona T para obtener TpTool", "usa para teletransportarte", Enum.KeyCode.T, function()
+    OtherSection:NewKeybind("Press T to get TpTool", "use to teleport", Enum.KeyCode.T, function()
 	mouse = game.Players.LocalPlayer:GetMouse()
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
@@ -717,12 +710,12 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 
-  local OtherSection = Other:NewSection("Otros en el juego")
-OtherSection:NewToggle("Anti-Crash", "esto no se puede resolver", function(state)
+  local OtherSection = Other:NewSection("Others in-game")
+OtherSection:NewToggle("Anti-Crash", "this cannot resolve", function(state)
 _G.AntiCrash = state
     end)    
     
-    OtherSection:NewToggle("Sin escudo S.W.A.T ᵇᵉᵗᵃ", "los policías no tienen escudos pero", function(state)
+    OtherSection:NewToggle("No shield S.W.A.T ᵇᵉᵗᵃ", "policemen don't have shields but", function(state)
  _G.AntiShield = (state and true or false)
     wait()
 	 while _G.AntiShield == true do
@@ -737,68 +730,68 @@ wait()
 		end
     end)    
     
-    OtherSection:NewButton("Próximamente", "Próximamente", function(state)
+    OtherSection:NewButton("Coming Soon", "Coming Soon", function(state)
     local Notify = AkaliNotif.Notify;
 Notify({
-Description = "Próximamente";
-Title = "suscríbete al canal";
+Description = "Coming Soon";
+Title = "subscribe to the channel";
 Duration = 10;
 });
 end)
 
-    local Tel = Window:NewTab("teletransportarse")
-local TelSection = Tel:NewSection("fuera de prisión")
-TelSection:NewButton("Base", "Un viaje rápido", function()
+    local Tel = Window:NewTab("teleport")
+local TelSection = Tel:NewSection("out of prison")
+TelSection:NewButton("Base", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-943, 95, 2055)
 end)
-local TelSection = Tel:NewSection("Prisión afuera")
-TelSection:NewButton("Jardín", "Un viaje rápido", function()
+local TelSection = Tel:NewSection("Prison Outside")
+TelSection:NewButton("Garden", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791, 98, 2498)
 end)
-TelSection:NewButton("Torre", "Un viaje rápido", function()
+TelSection:NewButton("Tower", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(822, 131, 2588)
 end)
-TelSection:NewButton("torre de la puerta", "Un viaje rápido", function()
+TelSection:NewButton("Gate Tower", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(502, 126, 2306)
 end)
-TelSection:NewButton("Puerta", "Un viaje rápido", function()
+TelSection:NewButton("Gate", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(505, 103, 2250)
 end)
-TelSection:NewButton("Puerta 2", "Un viaje rápido", function()
+TelSection:NewButton("Gate 2", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(461.31, 98.19, 2253.86)
 end) 
-TelSection:NewButton("Puerta 3", "Un viaje rápido", function()
+TelSection:NewButton("Gate 3", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(539.16, 98.19, 2183.42)
 end)
-TelSection:NewButton("Alcantarilla", "Un viaje rápido", function()
+TelSection:NewButton("Sewage", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(917.33, 78.65, 2292.54)
 end)
-TelSection:NewButton("terraza de la prisión", "Un viaje rápido", function()
+TelSection:NewButton("prison terrace", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(922.79, 118.99, 2384.05)
 end) 
-local TelSection = Tel:NewSection("prision adentro")
-TelSection:NewButton("Prisión", "Un viaje rápido", function()
+local TelSection = Tel:NewSection("Inside Prison")
+TelSection:NewButton("Prison", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 end)
-TelSection:NewButton("Amory", "Un viaje rápido", function()
+TelSection:NewButton("Amory", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(789, 100, 2260)
 end)
-TelSection:NewButton("Cafetería", "Un viaje rápido", function()
+TelSection:NewButton("Coffee shop", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(918.994873046875, 99.98993682861328, 2325.73095703125)
 end)
-TelSection:NewButton("Celdas de prisión", "Un viaje rápido", function()
+TelSection:NewButton("Prison Cells", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(919.5551147460938, 99.98998260498047, 2441.700927734375)
 end)
-TelSection:NewButton("Cocina", "Un viaje rápido", function()
+TelSection:NewButton("Kitchen", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(906.641845703125, 99.98993682861328, 2237.67333984375)
 end)
-TelSection:NewButton("Prisión 2", "Un viaje rápido", function()
+TelSection:NewButton("Prison 2", "a quick trip", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(888, 100, 2388)
 end)
 
            local Pri = Window:NewTab("Prison Life Hubs")
-            local PriSection = Pri:NewSection("Puerta")
-        PriSection:NewButton("Abre la Puerta 'No Fouciona'", "Ábrela sin hacer clic, me refiero al botón, no a este!!", function()
+            local PriSection = Pri:NewSection("Gate")
+        PriSection:NewButton("Open the Gate 'Doesn't Work'", "Open it without clicking, I mean the button, not this one!!", function()
                  workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS.buttons["Prison Gate"]["Prison Gate"])
             end)
                  local PriSection = Pri:NewSection("HUB")
@@ -811,8 +804,7 @@ end)
      PriSection:NewButton("Cmds Bar", "Gui Op", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/iZ64yzjE'))();
 end)
-          local PriSection = Pri:NewSection("PRISON LIFE . Script que talvez Você Use!")
- 
+          
  
 loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/funct/main/FFFFF5554'))()
 
@@ -850,7 +842,7 @@ Part.Touched:connect(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(982, 100, 2334)
 wait(0.2)
 local hint = Instance.new("Hint",game.Players.LocalPlayer.PlayerGui)
-   hint.Text = "Anti-void ejecutado"
+   hint.Text = "Anti-void executed"
    hint.Name = game.JobId
    task.wait(4)
    hint:Destroy()
@@ -900,6 +892,14 @@ coroutine.wrap(function()
 				end
 			end
 		end)()
-
+		
+game:GetService("RunService").Stepped:Connect(function()
+			if _G.Noclip then
+				pcall(function()
+					game.Players.LocalPlayer.Character:FindFirstChild("Head").CanCollide = false
+					game.Players.LocalPlayer.Character:FindFirstChild("Torso").CanCollide = false
+				end)
+			end
+		end)
 
 -- end functions
