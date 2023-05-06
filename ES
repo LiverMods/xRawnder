@@ -175,16 +175,7 @@ end)
 end)
         
   PlayerSection:NewToggle("Noclip", "cruzar la pared", function(status)
-	getgenv().Noclip = status
-	while true do
-		if not getgenv().Noclip then return end
-		game.RunService.Stepped:wait()
-		for i, v in pairs(plr.Character:GetDescendants()) do
-			if v:IsA('BasePart') then
-				v.CanCollide = false
-			end
-		end
-	end
+	_G.Noclip = status
 end)
 
 PlayerSection:NewToggle("Salto infinito", "Salto en el aire", function(value)
@@ -211,8 +202,23 @@ getgenv().enabled = xRawnder
         loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
     end)
     ValkSection:NewButton("Arrest All", "Cuidado con otros Scripters!", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
- end)
+wait(0.1)
+local player = game.Players.LocalPlayer
+local playerRootPart = player.Character.HumanoidRootPart
+local playerCFrame = playerRootPart.CFrame
+
+for _, criminal in pairs(game.Teams.Criminals:GetPlayers()) do
+    if criminal.Name ~= player.Name and criminal.Name ~= "jordan_NSS4" then
+        local countdown = 15
+        repeat
+            wait()
+            countdown = countdown - 1
+            game.Workspace.Remote.arrest:InvokeServer(criminal.Character.HumanoidRootPart)
+            playerRootPart.CFrame = criminal.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+        until countdown == 0
+    end
+end
+end)
  
  
  
@@ -886,5 +892,13 @@ coroutine.wrap(function()
 			end
 		end)()
 
+game:GetService("RunService").Stepped:Connect(function()
+			if _G.Noclip then
+				pcall(function()
+					game.Players.LocalPlayer.Character:FindFirstChild("Head").CanCollide = false
+					game.Players.LocalPlayer.Character:FindFirstChild("Torso").CanCollide = false
+				end)
+			end
+		end)
 
 -- end functions
