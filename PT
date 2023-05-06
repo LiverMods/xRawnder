@@ -175,16 +175,7 @@ end)
 end)
         
   PlayerSection:NewToggle("Noclip", "Atravesse a parede", function(status)
-	getgenv().Noclip = status
-	while true do
-		if not getgenv().Noclip then return end
-		game.RunService.Stepped:wait()
-		for i, v in pairs(plr.Character:GetDescendants()) do
-			if v:IsA('BasePart') then
-				v.CanCollide = false
-			end
-		end
-	end
+	_G.Noclip = status
 end)
 
 PlayerSection:NewToggle("Pulos Infinitos", "Op", function(value)
@@ -235,7 +226,7 @@ end)
     local PrisonSection = Prison:NewSection("Delete Parede, ...")
     PrisonSection:NewToggle("Remover Parede", "delete, pode ser restaurado", function(xRawnder)
     if xRawnder then
-    L = game.Lighting
+L = game.Lighting
 PH = workspace.Prison_Halls
 PGO = workspace.Prison_Guard_Outpost
 PA = workspace.Prison_Administration
@@ -910,6 +901,17 @@ coroutine.wrap(function()
 				end
 			end
 		end)()
+		
+		
+game:GetService("RunService").Stepped:Connect(function()
+			if _G.Noclip then
+				pcall(function()
+					game.Players.LocalPlayer.Character:FindFirstChild("Head").CanCollide = false
+					game.Players.LocalPlayer.Character:FindFirstChild("Torso").CanCollide = false
+				end)
+			end
+		end)
+	end		
 
 
 -- end functions
