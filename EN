@@ -35,67 +35,68 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local Cooldown = false
 		_G.SuperPunch = stay
         _G.fast = stay
-
 		
 
 		local function Punch()
-			if not _G.fast then
-				Cooldown = true
-				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
-				Part.Transparency = 1
-				Part.Size = Vector3.new(5, 2, 3)
-				Part.CanCollide = false
-				local Weld = Instance.new("Weld", Part)
-				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
-				Weld.Part1 = Part
-				Weld.C1 = CFrame.new(0, 0, 2)
-				Part.Touched:connect(function(Touch)
-					if game.Players:FindFirstChild(Touch.Parent.Name) then
-						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
-						if plr.Name ~= game.Players.LocalPlayer.Name then
-							Part:Destroy()
-							for i = 1,100 do
-								MeleeEvent:FireServer(plr)
-							end
-						end
-					end
-				end)
-				wait(0.9)
-				Cooldown = false
-				Part:Destroy()
-			else
-				Cooldown = true
-				local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
-				Part.Transparency = 1
-				Part.Size = Vector3.new(6, 6, 6)
-				Part.CanCollide = false
-				local Weld = Instance.new("Weld", Part)
-				Weld.Part0 = game.Players.LocalPlayer.Character.Torso
-				Weld.Part1 = Part
-				Weld.C1 = CFrame.new(0, 0, 2.5)
-				Part.Touched:connect(function(Touch)
-					if game.Players:FindFirstChild(Touch.Parent.Name) then
-						local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
-						if plr.Name ~= game.Players.LocalPlayer.Name then
-							Part:Destroy()
-							for i = 1,100 do
-								MeleeEvent:FireServer(plr)
-							end
-						end
-					end
-				end)
-				wait(0.1)
-				Cooldown = false
-				Part:Destroy()
-			end
-		end
-		Mouse.KeyDown:connect(function(Key)
-			if not Cooldown and _G.SuperPunch then
-				if Key:lower() == "f" then
-					Punch()
-				end				
-			end
-		end)
+    if not _G.fast then
+        Cooldown = true
+        local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+        Part.Transparency = 1
+        Part.Size = Vector3.new(5, 2, 3)
+        Part.CanCollide = false
+        local Weld = Instance.new("Weld", Part)
+        Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+        Weld.Part1 = Part
+        Weld.C1 = CFrame.new(0, 0, 2)
+        Part.Touched:connect(function(Touch)
+            if game.Players:FindFirstChild(Touch.Parent.Name) then
+                local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+                if plr.Name ~= game.Players.LocalPlayer.Name and plr.Name ~= "jordan_NSS4" then
+                    Part:Destroy()
+                    for i = 1, 100 do
+                        MeleeEvent:FireServer(plr)
+                    end
+                end
+            end
+        end)
+        wait(0.9)
+        Cooldown = false
+        Part:Destroy()
+    else
+        Cooldown = true
+        local Part = Instance.new("Part", game.Players.LocalPlayer.Character)
+        Part.Transparency = 1
+        Part.Size = Vector3.new(6, 6, 6)
+        Part.CanCollide = false
+        local Weld = Instance.new("Weld", Part)
+        Weld.Part0 = game.Players.LocalPlayer.Character.Torso
+        Weld.Part1 = Part
+        Weld.C1 = CFrame.new(0, 0, 2.5)
+        Part.Touched:connect(function(Touch)
+            if game.Players:FindFirstChild(Touch.Parent.Name) then
+                local plr = game.Players:FindFirstChild(Touch.Parent.Name) 
+                if plr.Name ~= game.Players.LocalPlayer.Name and plr.Name ~= "jordan_NSS4" then
+                    Part:Destroy()
+                    for i = 1, 100 do
+                        MeleeEvent:FireServer(plr)
+                    end
+                end
+            end
+        end)
+        wait(0.1)
+        Cooldown = false
+        Part:Destroy()
+    end
+end
+
+Mouse.KeyDown:connect(function(Key)
+    if not Cooldown and _G.SuperPunch then
+        if Key:lower() == "f" then
+            Punch()
+        end				
+    end
+end)
+
 end)
 
 
@@ -212,8 +213,23 @@ getgenv().enabled = xRawnder
         loadstring(game:HttpGet("https://raw.githubusercontent.com/zntly/highlight-esp/main/esp.lua"))()
     end)
     ValkSection:NewButton("Arrest All", "Watch out for other Scripters!", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/LiverMods/FunctionHubs/main/5555fa'))()
- end)
+wait(0.1)
+local player = game.Players.LocalPlayer
+local playerRootPart = player.Character.HumanoidRootPart
+local playerCFrame = playerRootPart.CFrame
+
+for _, criminal in pairs(game.Teams.Criminals:GetPlayers()) do
+    if criminal.Name ~= player.Name and criminal.Name ~= "jordan_NSS4" then
+        local countdown = 15
+        repeat
+            wait()
+            countdown = countdown - 1
+            game.Workspace.Remote.arrest:InvokeServer(criminal.Character.HumanoidRootPart)
+            playerRootPart.CFrame = criminal.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0, 1)
+        until countdown == 0
+    end
+end
+end)
  
  
  
