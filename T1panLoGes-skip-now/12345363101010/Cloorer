@@ -431,7 +431,7 @@ local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 
 
 --[ Nome, Cor ] 
-local Window = Library.CreateLib("{ V12 } { x-Rawnder }", "Midnight")
+local Window = Library.CreateLib("{ V13 } { x-Rawnder }", "Midnight")
 
 
 
@@ -516,7 +516,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 26/04/23")
+                        local CreSection = Cre:NewSection("latest update: 07/05/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -664,6 +664,9 @@ task.wait(2.5)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V13 Info", "info", {"🇵🇹 1- Adicionado 'Matar', em BETA 🇧🇷", "🇵🇹 2- Adicionado 'Matar Infinitamente', em BETA 🇧🇷", "🇵🇹 3- Anti-Crash foi otimizado  🇧🇷"}, function(v)
+          print(v)
+          end)
           LocSection:NewDropdown("V12 Info", "info", {"🇵🇹 1- Melhorado 'Super Soco' e agora pode ser desativado e ativado 🇧🇷", "🇵🇹 2- Adicionado 'Remover escudo' 🇧🇷", "🇵🇹 3- Adicionado 'Anti-Crash'  🇧🇷"}, function(v)
           print(v)
           end)      
@@ -697,6 +700,9 @@ task.wait(2.5)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V13 Info", "info", {"🇺🇲 1- Added 'Kill', in BETA 🇬🇧", "🇺🇲 2- Added 'Loop Kill', in BETA 🇬🇧", "🇺🇲 3 - Anti-Crash has been optimized  🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V12 Info", "info", {"🇺🇲 1- Improved 'Super Punch' and can now be toggled off and on 🇬🇧", "🇺🇲 2- Added 'Remove Shield' 🇬🇧", "🇺🇲 3 - Added 'Anti Crash'  🇬🇧"}, function(v)
           print(v)
           end)      
@@ -731,6 +737,9 @@ task.wait(2.5)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V13 Info", "info", {"🇪🇸 1- Añadido 'Kill', en BETA 🇲🇽", "🇪🇸 2- Añadido 'Loop Kill', en BETA 🇲🇽", "🇪🇸 3- Anti-Crash ha sido optimizado 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V12 Info", "info", {"🇪🇸 1- 'Super Punch' mejorado y ahora se puede activar y desactivar 🇲🇽", "🇪🇸 2- Se agregó 'Eliminar escudo' 🇲🇽", "🇪🇸 3- Se agregó 'Anti Crash' 🇲🇽"}, function(v)
                    print(v)
                    end)   
@@ -829,9 +838,9 @@ end)
            end)
 
 spawn(function()
-           wait(36)
+           wait(40)
            game.StarterGui:SetCore("SendNotification", {
-           Title = "V12 new version 🎉";
+           Title = "V13 new version 🎉";
 	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
@@ -915,7 +924,7 @@ wait(0.2)
 			local Cre = Window:NewTab("Credits: Liver zMods")
 			wait(0.1)
 			local CreSection = Cre:NewSection("Made by Liver zMods")
-                        local CreSection = Cre:NewSection("latest update: 26/04/23")
+                        local CreSection = Cre:NewSection("latest update: 07/05/23")
 			wait(0.1)
 			-- MAIN SECTION
 spawn(function()
@@ -1062,6 +1071,9 @@ task.wait(2.5)
            wait(0.18)
            -- LOCATION SECTION
           local LocSection = Loc:NewSection("PORTUGUÊS INFO")
+          LocSection:NewDropdown("V13 Info", "info", {"🇵🇹 1- Adicionado 'Matar', em BETA 🇧🇷", "🇵🇹 2- Adicionado 'Matar Infinitamente', em BETA 🇧🇷", "🇵🇹 3- Anti-Crash foi otimizado  🇧🇷"}, function(v)
+          print(v)
+          end)
           LocSection:NewDropdown("V12 Info", "info", {"🇵🇹 1- Melhorado 'Super Soco' e agora pode ser desativado e ativado 🇧🇷", "🇵🇹 2- Adicionado 'Remover escudo' 🇧🇷", "🇵🇹 3- Adicionado 'Anti-Crash'  🇧🇷"}, function(v)
           print(v)
           end)      
@@ -1095,6 +1107,9 @@ task.wait(2.5)
            wait(0.15)
            --ing
           local LocSection = Loc:NewSection("English INFO")
+          LocSection:NewDropdown("V13 Info", "info", {"🇺🇲 1- Added 'Kill', in BETA 🇬🇧", "🇺🇲 2- Added 'Loop Kill', in BETA 🇬🇧", "🇺🇲 3 - Anti-Crash has been optimized  🇬🇧"}, function(v)
+          print(v)
+          end)      
           LocSection:NewDropdown("V12 Info", "info", {"🇺🇲 1- Improved 'Super Punch' and can now be toggled off and on 🇬🇧", "🇺🇲 2- Added 'Remove Shield' 🇬🇧", "🇺🇲 3 - Added 'Anti Crash'  🇬🇧"}, function(v)
           print(v)
           end)      
@@ -1129,6 +1144,9 @@ task.wait(2.5)
              wait(0.15)
            -- esp
                    local LocSection = Loc:NewSection("Español INFO")
+                   LocSection:NewDropdown("V13 Info", "info", {"🇪🇸 1- Añadido 'Kill', en BETA 🇲🇽", "🇪🇸 2- Añadido 'Loop Kill', en BETA 🇲🇽", "🇪🇸 3- Anti-Crash ha sido optimizado 🇲🇽"}, function(v)
+                   print(v)
+                   end)   
                    LocSection:NewDropdown("V12 Info", "info", {"🇪🇸 1- 'Super Punch' mejorado y ahora se puede activar y desactivar 🇲🇽", "🇪🇸 2- Se agregó 'Eliminar escudo' 🇲🇽", "🇪🇸 3- Se agregó 'Anti Crash' 🇲🇽"}, function(v)
                    print(v)
                    end)   
@@ -1171,9 +1189,9 @@ end)
 
 
            spawn(function()
-           wait(36)
+           wait(40)
 game.StarterGui:SetCore("SendNotification", {
-           Title = "V12 new version 🎉";
+           Title = "V13 new version 🎉";
 	      Text = "Thanks for the 2.300+ users who use my script 😁";
            Duration = 25; })
            end)
@@ -1211,7 +1229,7 @@ end
 	})
 
 end
---V12
+--V13
 
 end)
 end)
