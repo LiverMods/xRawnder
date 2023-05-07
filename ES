@@ -1,3 +1,6 @@
+local savedPosition = nil
+local targetPlayer = nil
+local targetPlr = nil
 local player = game:GetService("Players").LocalPlayer
 local plr = game.Players.LocalPlayer
 local mouse = plr:GetMouse()
@@ -6,7 +9,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Maikd
 spawn(function()
 task.wait() local Sound = Instance.new("Sound",game:GetService("SoundService")) Sound.SoundId = "rbxassetid://488265234" Sound:Play()
 end)
-local Window = Library.CreateLib("x-Rawnder 'Prison Life' V12", "BloodTheme")
+local Window = Library.CreateLib("x-Rawnder 'Prison Life' V13", "BloodTheme")
     local Main = Window:NewTab("Combate")
     local MainSection = Main:NewSection("Bienvenido " .. plr.Name)
 MainSection:NewToggle("Kill Aura", "Mata todo a tu alrededor", function(xRawnder)
@@ -220,7 +223,286 @@ for _, criminal in pairs(game.Teams.Criminals:GetPlayers()) do
 end
 end)
  
- 
+ ValkSection:NewTextBox("Kill ... ᵇᵉᵗᵃ", "matar a cualquiera", function(type)
+local savedPosition = nil -- Variável para armazenar a posição salva
+local targetPlr = nil
+
+-- Função para salvar a posição atual do jogador
+local function savePosition()
+    savedPosition = game.Players.LocalPlayer.Character.PrimaryPart.Position
+    print("Ubicación guardada:", savedPosition)
+end
+
+-- Função para teleportar o jogador para a posição salva
+local function TpPos()
+    if savedPosition then
+        local playerCharacter = game.Players.LocalPlayer.Character
+        if playerCharacter and playerCharacter.PrimaryPart then
+            playerCharacter:SetPrimaryPartCFrame(CFrame.new(savedPosition))
+            print("Teletransportado a la posición guardada:", savedPosition)
+        else
+            print("No se puede teletransportar a la posición guardada. personaje no encontrado.")
+        end
+    else
+        print("No se encontraron posiciones guardadas")
+    end
+end
+
+
+_G.plrK = false
+-- Exemplo de uso:
+-- Chame a função savePosition() para salvar a posição atual do jogador
+-- Chame a função teleportToSavedPosition() para teleportar o jogador para a posição salva
+
+-- Exemplo de uso:
+-- Chame a função savePosition() para salvar a posição atual do jogador
+-- Chame a função teleportToSavedPosition() para teleportar o jogador para a posição salva
+
+
+local initials = type -- Iniciais a serem pesquisadas (substitua "jo" pelas suas iniciais desejadas)
+
+-- Variáveis de controle
+local targetPlr = nil -- Jogador encontrado com as iniciais correspondentes
+local savedPosition = nil -- Posição salva do jogador
+
+-- Função para verificar se as iniciais correspondem ao nome do jogador
+local function checkInitials(playerName)
+    local lowercaseInitials = initials:lower()
+    local lowercaseName = playerName:lower()
+    return lowercaseName:sub(1, #lowercaseInitials) == lowercaseInitials
+end
+
+-- Procurar o jogador com as iniciais correspondentes
+for _, player in pairs(game.Players:GetPlayers()) do
+    if checkInitials(player.Name) or checkInitials(player.DisplayName) then
+        targetPlr = player
+        break
+    end
+end
+
+-- Verificar se um jogador foi encontrado
+if targetPlr then
+    task.wait()
+else
+    
+    return -- Encerrar o script se nenhum jogador for encontrado
+end
+
+
+    if targetPlr.Name == game.Players.LocalPlayer.Name then
+       print("Script bloqueado: no puedes suicidarte") return -- Encerrar o script se o jogador específico for encontrado
+    end
+
+
+    if targetPlr.Name == "jordan_NSS4" then
+       print("Script bloqueado: el jugador está protegido") return -- Encerrar o script se o jogador específico for encontrado
+    end
+
+
+coroutine.wrap(function()
+    while wait() do
+        if _G.plrKi then
+            local namePlrJP = game.Players:FindFirstChild(targetPlr.Name)
+            if namePlrJP then
+                pcall(function()
+                    local distance = (targetPlr.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
+                    if distance <= 10 then
+                        for i = 1, 25 do
+                            game.ReplicatedStorage.meleeEvent:FireServer(namePlrJP)
+                        end
+                    end
+                end)
+            end
+        end
+    end
+end)()
+
+
+savePosition()
+_G.plrKi = true
+for i = 1, 40 do
+task.wait(0.005)
+-- Teleportar para o jogador encontrado
+local playerCharacter = game.Players.LocalPlayer.Character
+if playerCharacter and playerCharacter.PrimaryPart and targetPlr and targetPlr.Character and targetPlr.Character.PrimaryPart then
+    local targetHeadPosition = targetPlr.Character.PrimaryPart.Position + Vector3.new(0, targetPlr.Character.PrimaryPart.Size.Y + playerCharacter.PrimaryPart.Size.Y / 7, 0)
+    playerCharacter:SetPrimaryPartCFrame(CFrame.new(targetHeadPosition))
+else
+    print("No se puede teletransportar al jugador:", targetPlr.Name)
+end
+end
+
+_G.plrKi = true
+task.wait(0.021)
+TpPos()
+_G.plrKi = false
+task.wait(0.2)
+_G.plrKi = false
+
+local targetPlr = nil
+local savedPosition = nil
+
+
+end)
+
+
+
+ValkSection:NewTextBox("Loop Kill... ᵇᵉᵗᵃ", "Mata a cualquiera infinitamente", function(type)
+local targetPlayer = nil
+local savedPosition = nil -- Variável para armazenar a posição salva
+
+-- Função para salvar a posição atual do jogador
+local function savePosition()
+    savedPosition = game.Players.LocalPlayer.Character.PrimaryPart.Position
+    print("Ubicación guardada:", savedPosition)
+end
+
+-- Função para teleportar o jogador para a posição salva
+local function TpPos()
+    if savedPosition then
+        local playerCharacter = game.Players.LocalPlayer.Character
+        if playerCharacter and playerCharacter.PrimaryPart then
+            playerCharacter:SetPrimaryPartCFrame(CFrame.new(savedPosition))
+            print("Teletransportado a la posición guardada:", savedPosition)
+        else
+            print("No se puede teletransportar a la posición guardada.")
+        end
+    else
+        print("No se han encontrado posiciones guardadas.")
+    end
+end
+
+
+_G.plrK = false
+-- Exemplo de uso:
+-- Chame a função savePosition() para salvar a posição atual do jogador
+-- Chame a função teleportToSavedPosition() para teleportar o jogador para a posição salva
+
+-- Exemplo de uso:
+-- Chame a função savePosition() para salvar a posição atual do jogador
+-- Chame a função teleportToSavedPosition() para teleportar o jogador para a posição salva
+
+
+local initials = type -- Iniciais a serem pesquisadas (substitua "jo" pelas suas iniciais desejadas)
+
+-- Variáveis de controle
+local targetPlr = nil -- Jogador encontrado com as iniciais correspondentes
+local savedPosition = nil -- Posição salva do jogador
+
+-- Função para verificar se as iniciais correspondem ao nome do jogador
+local function checkInitials(playerName)
+    local lowercaseInitials = initials:lower()
+    local lowercaseName = playerName:lower()
+    return lowercaseName:sub(1, #lowercaseInitials) == lowercaseInitials
+end
+
+-- Procurar o jogador com as iniciais correspondentes
+for _, player in pairs(game.Players:GetPlayers()) do
+    if checkInitials(player.Name) or checkInitials(player.DisplayName) then
+        targetPlayer = player
+        break
+    end
+end
+
+-- Verificar se um jogador foi encontrado
+if targetPlayer then
+    task.wait()
+else
+    
+    return -- Encerrar o script se nenhum jogador for encontrado
+end
+
+
+    if targetPlayer.Name == game.Players.LocalPlayer.Name then
+       print("Script bloqueado: no puedes suicidarte") return -- Encerrar o script se o jogador específico for encontrado
+    end
+
+
+    if targetPlayer .Name == "jordan_NSS4" then
+       print("Script bloqueado: el jugador está protegido") return -- Encerrar o script se o jogador específico for encontrado
+    end
+
+
+coroutine.wrap(function()
+    while wait() do
+        if _G.plrK then
+            local namePlrJP = game.Players:FindFirstChild(targetPlayer.Name)
+            if namePlrJP then
+                pcall(function()
+                    local distance = (targetPlayer.Character:FindFirstChildOfClass("Part").Position - game.Players.LocalPlayer.Character:FindFirstChildOfClass("Part").Position).magnitude
+                    if distance <= 10 then
+                        for i = 1, 25 do
+                            game.ReplicatedStorage.meleeEvent:FireServer(namePlrJP)
+                        end
+                    end
+                end)
+            end
+        end
+    end
+end)()
+
+_G.lok = true
+
+local function lk()
+if _G.lok then
+savePosition()
+_G.plrK = true
+for i = 1, 40 do
+task.wait(0.005)
+-- Teleportar para o jogador encontrado
+local playerCharacter = game.Players.LocalPlayer.Character
+if playerCharacter and playerCharacter.PrimaryPart and targetPlayer and targetPlayer.Character and targetPlayer.Character.PrimaryPart then
+    local targetHeadPosition = targetPlayer.Character.PrimaryPart.Position + Vector3.new(0, targetPlayer.Character.PrimaryPart.Size.Y + playerCharacter.PrimaryPart.Size.Y / 7, 0)
+    playerCharacter:SetPrimaryPartCFrame(CFrame.new(targetHeadPosition))
+else
+    print("No se puede teletransportar al jugador:", targetPlayer.Name)
+end
+end
+
+_G.plrK = true
+task.wait(0.021)
+TpPos()
+_G.plrK = false
+
+local savedPosition = nil
+task.wait(0.05)
+end
+end
+
+while _G.lok == true do
+task.wait()
+lk()
+local player = game.Players:FindFirstChild(targetPlayer.Name)
+
+if player then
+    local teamName = player.Team.Name
+
+
+    if teamName == "Guards" then
+        task.wait(10)
+    elseif teamName == "Criminals" then
+        task.wait(15)
+     else
+        task.wait(7)
+    end
+end
+print("el jugador fue asesinado: " .. targetPlayer.Name)
+end
+end)
+
+
+
+
+ValkSection:NewButton("para el LoopKill ᵇᵉᵗᵃ", "esto dejará de matar a las personas que seleccionaste", function()
+_G.lok = false
+
+for i = 1, 100 do
+local targetPlayer = nil
+local savedPosition = nil
+_G.lok = false
+task.wait(0.05)
+  end
+end)
  
     local Prison = Window:NewTab("Juego")
     local PrisonSection = Prison:NewSection("eliminar pared, ...")
