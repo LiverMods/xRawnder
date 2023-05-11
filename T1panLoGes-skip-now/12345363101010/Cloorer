@@ -449,7 +449,7 @@ local Aba3 = Window:NewTab("Black-List")
 local xRaSection = Aba1:NewSection("Liver zMods")
 local CreSection = Aba2:NewSection("Liver zMods")
 local BlackSection = Aba3:NewSection("Black list of players")
-BlackSection:NewButton("{ darkzin1561 }: temporary ban", "Violation of Rules, Misbehavior.", function()
+BlackSection:NewButton("nobody", " ", function()
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Copied Link";
 	Text = "User Link has been copied";
