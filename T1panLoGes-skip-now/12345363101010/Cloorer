@@ -342,7 +342,7 @@ end)                 task.wait(3.7)
 
 spawn(function()
 task.wait(1)
-if playerName == "darkzin1561" then
+if playerName == "jordan_NSS2" then
     kick()
 else
     print("You are not on the ban list")
