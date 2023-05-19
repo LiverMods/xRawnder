@@ -1,125 +1,79 @@
 prefix = {
-
     "!",
-
     "/",
-
     ";",
-
     ":",
-
     ".",
-
     "#",
-
     "$",
-
     "@",
-
     "<",
-
     ">",
-
     "•",
-
     "?",
-
     "%"
-
 }
-
 xrawnder = {80, 190, 291}
-
 red = {255, 0, 0}
-
 blue = {0, 0, 255}
-
 cian = {0, 255, 255}
-
 yellow = {255, 255, 0}
-
 green = {0, 255, 0}
 
 function chat_Message(text, color, font)
-
     local fontSize = Enum.FontSize.Size28
-
     task.spawn(function()
-
         game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage", {
-
             Text = text,
-
             Color = Color3.fromRGB(color[1], color[2], color[3]),
-
             Font = font,
-
             FontSize = fontSize
-
         })
-
     end)
-
 end
 
+
+
+
+
+
 function AddPrefix(newPrefix)
-
     for _, p in ipairs(prefix) do
-
         if p == newPrefix then
-
             print("Oops, it already has")
-
             return
-
         end
-
     end
-
     table.insert(prefix, newPrefix)
-
     chat_Message("added prefix: " ..newPrefix, xrawnder, Enum.Font.SciFi) 
-
 end
 
 function Add_cmds_Chat(keyword, funct)
-
     game.Players.LocalPlayer.Chatted:Connect(function(message)
-
         local command = message:lower()
-
         for _, p in ipairs(prefix) do
-
             if command:sub(1, #p) == p and command:sub(#p + 1) == keyword then
-
                 funct()
-
             end
-
         end
-
     end)
-
 end
 
 function Add_cmds_ChatSearch(keyword, string, functi)
-
     game.Players.LocalPlayer.Chatted:Connect(function(message)
-
         local command = message:lower()
-
         for _, p in ipairs(prefix) do
-
             if command:sub(1, #p) == p and command:sub(#p + 1, #p + #keyword) == keyword then
-
-                string = command:sub(#p + #keyword + 2)
-
+               string = command:sub(#p + #keyword + 2)
                 functi(string)
-
             end
-
         end
-
     end)
-
 end
+
+
+
+
+Add_cmds_ChatSearch("add prefix", prefixo, function(prefixo)
+    AddPrefix(prefixo)
+end)
