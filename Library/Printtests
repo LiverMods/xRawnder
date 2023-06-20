@@ -45,7 +45,7 @@ local DefaultSettings = {
         TracersEnabled = false,
         BoxEsp = false,
         TeamColors = true,
-        Thickness = 1.7
+        Thickness = 1.7,
         TracerThickness = 2,
         Transparency = .9,
         TracerTrancparency = 0,
@@ -636,21 +636,21 @@ end
 function tracer()
     toggle = false
     wait()
-    local toggle = not toggle
+    toggle = not toggle
     task.wait()
     EspSettings.TracersEnabled = toggle
     SetProperties({ Tracer = { Visible = toggle } });
 end
 
 function box()
-    local toggle2 = false
+    toggle2 = false
     wait()
-    local toggle2 = not toggle2
+    toggle2 = not toggle2
     task.wait()
     EspSettings.BoxEsp = toggle2
     SetProperties({ Box = { Visible = toggle2 } });
 end
-
+EspSettings.HealthEnabled = false
 coroutine.wrap(function()
     while wait(4.5) do
        Settings.WindowPosition = Window.GetPosition();
