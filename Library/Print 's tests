@@ -633,7 +633,7 @@ for Index, Function in pairs(HookedFunctions) do
     Function[4] = hookfunction(Function[2], Function[3]);
 end
 
-function trecer()
+function tracer()
     toggle = false
     wait()
     local toggle = not toggle
