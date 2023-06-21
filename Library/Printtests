@@ -651,6 +651,10 @@ function box()
     SetProperties({ Box = { Visible = toggle2 } });
 end
 EspSettings.HealthEnabled = false
+EspSettings.BoxEsp = false
+EspSettings.TracersEnabled = false
+SetProperties({ Tracer = { Visible = false } });
+SetProperties({ Box = { Visible = false } });
 coroutine.wrap(function()
     while wait(4.5) do
        Settings.WindowPosition = Window.GetPosition();
