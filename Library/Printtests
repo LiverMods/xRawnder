@@ -633,33 +633,27 @@ for Index, Function in pairs(HookedFunctions) do
     Function[4] = hookfunction(Function[2], Function[3]);
 end
 
-function tracer()
-    toggle = false
-    wait()
-    toggle = not toggle
-    task.wait()
-    EspSettings.TracersEnabled = toggle
-    SetProperties({ Tracer = { Visible = toggle } });
+toggle = false
+toggle2 = false
+task.wait()
+
+function tracer(bool)
+    task.wait(0.05)
+    EspSettings.TracersEnabled = bool
+    SetProperties({ Tracer = { Visible = bool } });
 end
 
-function box()
-    toggle2 = false
-    wait()
-    toggle2 = not toggle2
-    task.wait()
-    EspSettings.BoxEsp = toggle2
-    SetProperties({ Box = { Visible = toggle2 } });
+function box(bool)
+    task.wait(0.05)
+    EspSettings.BoxEsp = bool
+    SetProperties({ Box = { Visible = bool } });
 end
+
 EspSettings.HealthEnabled = false
 EspSettings.BoxEsp = false
 EspSettings.TracersEnabled = false
 SetProperties({ Tracer = { Visible = false } });
 SetProperties({ Box = { Visible = false } });
-coroutine.wrap(function()
-    while wait(4.5) do
-       Settings.WindowPosition = Window.GetPosition();
-       local Encoded = HttpService:JSONEncode(EncodeConfig(Settings));
-        writefile("fates-esp.json", Encoded);
-    end
-end)() warn("by Liver zMods ESP")
+
+
 end)()
