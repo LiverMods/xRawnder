@@ -285,61 +285,6 @@ function Kavo.CreateLib(kavName, themeList)
     title.TextSize = 16.000
     title.TextXAlignment = Enum.TextXAlignment.Left
     
-    local tweenService = game:GetService("TweenService")
-
-local function animacaoChamativa()
-    local close = script.Parent.CloseButton
-    local Main = script.Parent
-
-    local tweenInfo1 = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
-    local properties1 = {
-        ImageTransparency = 1,
-        Size = UDim2.new(0, 50, 0, 50),
-        Position = UDim2.new(0.5, -25, 0.5, -25)
-    }
-
-    local tweenInfo2 = TweenInfo.new(0.5, Enum.EasingStyle.Bounce, Enum.EasingDirection.Out)
-    local properties2 = {
-        Size = UDim2.new(0, 400, 0, 400),
-        Position = UDim2.new(0.5, -200, 0.5, -200)
-    }
-
-    local tween1 = tweenService:Create(close, tweenInfo1, properties1)
-    tween1:Play()
-
-    tween1.Completed:Wait()
-
-    wait(0.3)
-    local tween2 = tweenService:Create(Main, tweenInfo2, properties2)
-    tween2:Play()
-
-    wait(0.6)
-
-    print("A animação foi concluída!")
-end
-
-
-
-
-    close.Name = "close"
-    close.Parent = MainHeader
-    close.BackgroundTransparency = 1.000
-    close.Position = UDim2.new(0.949999988, 0, 0.137999997, 0)
-    close.Size = UDim2.new(0, 21, 0, 21)
-    close.Text = "—"
-    close.TextSize = 1.500
-    close.TextScaled = true
-    close.TextWrapped = true
-    close.MouseButton1Click:Connect(function()
-        animacaoChamativa()
-        wait(1.5)
-        local Sound = Instance.new("Sound", game:GetService("SoundService"))
-        Sound.SoundId = "rbxassetid://9119720940"
-        Sound:Play()
-        task.wait(0.05)
-        Library:ToggleUI()
-    end)
-
     MainSide.Name = "MainSide"
     MainSide.Parent = Main
     MainSide.BackgroundColor3 = themeList.Header
