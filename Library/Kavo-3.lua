@@ -1,4 +1,5 @@
---// V3 Kavo //
+-- // Kavo Ui V3 \\ --
+
 local Kavo = {}
 
 local tween = game:GetService("TweenService")
@@ -1846,7 +1847,9 @@ function Kavo.CreateLib(kavName, themeList)
                             if not focusing then
                                 opened = false
                                 callback(v)
+                                if clickName == true then
                                 itemTextbox.Text = v
+                            end
                                 dropFrame:TweenSize(UDim2.new(0, 352, 0, 33), 'InOut', 'Linear', 0.08)
                                 wait(0.1)
                                 updateSectionFrame()
