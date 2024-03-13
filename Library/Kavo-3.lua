@@ -1,3 +1,4 @@
+--// V3 Kavo //
 local Kavo = {}
 
 local tween = game:GetService("TweenService")
@@ -178,6 +179,8 @@ function Kavo.CreateLib(kavName, themeList)
         themeList = themeStyles.LightTheme
     elseif themeList == "BloodTheme" then
         themeList = themeStyles.BloodTheme
+    elseif themeList == "DarkBlue" then
+        themeList = themeStyles.DarkBlue
     elseif themeList == "Luna" then
         themeList = themeStyles.Luna
     elseif themeList == "GrapeTheme" then
@@ -2605,7 +2608,7 @@ function Kavo.CreateLib(kavName, themeList)
             	label.Parent = sectionInners
             	label.BackgroundColor3 = themeList.SchemeColor
             	label.BorderSizePixel = 0
-	        	label.ClipsDescendants = true
+		label.ClipsDescendants = true
             	label.Text = title
            		label.Size = UDim2.new(0, 352, 0, 33)
 	            label.Font = Enum.Font.Gotham
